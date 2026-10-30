@@ -1,235 +1,355 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Programmer & Social Media Specialist</title>
+    <title>Angger Rizky Rambudia — Programmer & System Analyst</title>
+    <meta name="description" content="Portofolio Angger Rizky Rambudia, lulusan Sistem Informasi Universitas Gunadarma (IPK 3,76). Programmer & System Analyst dengan minat di web development, analisis data, dan analisis sistem.">
+    <meta property="og:title" content="Angger Rizky Rambudia — Programmer & System Analyst">
+    <meta property="og:description" content="Lulusan Sistem Informasi Universitas Gunadarma. Web development, analisis data, dan analisis sistem.">
+    <meta property="og:image" content="https://porto-angger.vercel.app/fotoprofil.jpeg">
+    <meta property="og:url" content="https://porto-angger.vercel.app/">
+    <meta name="theme-color" content="#0b1120">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Angger Rizky Rambudia</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <a href="#home" class="logo">Angger<span>.</span></a>
+            <button type="button" class="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#experience">Pengalaman</a></li>
+                <li><a href="#projects">Proyek</a></li>
+                <li><a href="#skills">Keahlian</a></li>
+                <li><a href="#certifications">Sertifikasi</a></li>
+                <li><a href="#contact" class="nav-cta">Kontak</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="parallax-wrap">
-            <div class="parallax-bg" id="parallax-bg" aria-hidden="true"></div>
-        </div>
-        <div class="container">
-            <h1>Welcome to <span id="typing-text"></span><span class="typing-cursor" id="typing-cursor" aria-hidden="true"></span></h1>
-            <p class="fade-in-up">Programmer & Social Media Specialist | Crafting Code and Campaigns</p>
-            <a href="#portfolio" class="btn">View My Work</a>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="fade-in-up">About Me</h2>
-            <div class="about-content">
-                <div class="about-card about-image fade-in-up delay-1">
-                    <img src="fotoprofil.jpeg" alt="Angger Rizky Rambudia">
-                </div>
-                <div class="about-card about-text fade-in-up delay-2">
-                    <div class="about-intro">
-                        <h3>Angger Rizky Rambudia</h3>
-                        <p class="title">Programmer & Tech Enthusiast</p>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <span class="status-badge"><span class="dot"></span> Open to work · Jakarta</span>
+                    <h1>Halo, saya <span class="accent">Angger Rizky Rambudia</span></h1>
+                    <p class="hero-role">
+                        <span id="typing-text">Programmer</span><span class="typing-cursor" aria-hidden="true"></span>
+                    </p>
+                    <p class="hero-desc">Lulusan Sistem Informasi Universitas Gunadarma (IPK 3,76). Saat ini bekerja sebagai Programmer &amp; System Analyst di Anara Trisakti Medika. Saya senang membangun sistem berbasis web, mengolah data menjadi insight, dan menganalisis kebutuhan sistem.</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn">Lihat Proyek <i class="fas fa-arrow-down"></i></a>
+                        <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
                     </div>
-                    <p class="about-desc">Saya adalah mahasiswa semester 7 Program Studi Sistem Informasi di Universitas Gunadarma dengan passion besar dalam pengembangan sistem berbasis teknologi dan analisis data.</p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <span class="highlight-icon">💻</span>
-                            <div class="highlight-text">
-                                <h4>Web Development</h4>
-                                <p>Membangun aplikasi web yang scalable</p>
-                            </div>
+                    <div class="hero-social">
+                        <a href="https://www.linkedin.com/in/angger-rizky-rambudia-972556255/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/anggerr24" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/angger_rzky/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:angger2434@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hero-photo">
+                    <img src="fotoprofil.jpeg" alt="Foto Angger Rizky Rambudia" width="320" height="320">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Tentang Saya</h2>
+                <div class="about-grid">
+                    <div class="about-text fade-in-up">
+                        <p>Saya Angger, Sarjana Komputer dari Program Studi Sistem Informasi Universitas Gunadarma (2022–2026). Di kampus saya belajar pemrograman, basis data, analisis sistem, dan analisis data. Skripsi saya membahas <strong>Market Basket Analysis dengan algoritma Apriori</strong> untuk menyusun rekomendasi bundling menu dari data transaksi.</p>
+                        <p>Selama kuliah saya magang sebagai IT Intern di Kementerian Perhubungan RI dan Social Media Specialist di Rutee. Sekarang saya menjadi Programmer &amp; System Analyst di Anara Trisakti Medika.</p>
+                        <p>Saya terbuka untuk peran <strong>Programmer, System Analyst, Data Analyst, IT Support,</strong> maupun <strong>Technical Writer</strong>.</p>
+                    </div>
+                    <div class="stats fade-in-up">
+                        <div class="stat"><span class="stat-num">3,76</span><span class="stat-label">IPK dari 4,00</span></div>
+                        <div class="stat"><span class="stat-num">4</span><span class="stat-label">Pengalaman kerja &amp; magang</span></div>
+                        <div class="stat"><span class="stat-num">7</span><span class="stat-label">Proyek</span></div>
+                        <div class="stat"><span class="stat-num">9</span><span class="stat-label">Sertifikasi</span></div>
+                    </div>
+                </div>
+                <div class="focus-grid">
+                    <div class="focus fade-in-up"><i class="fas fa-code"></i><h3>Web Development</h3><p>Aplikasi web dengan PHP, MySQL/SQLite, dan JavaScript.</p></div>
+                    <div class="focus fade-in-up"><i class="fas fa-chart-pie"></i><h3>Data Analysis</h3><p>Python (Pandas), Power BI, Tableau, dan Excel.</p></div>
+                    <div class="focus fade-in-up"><i class="fas fa-sitemap"></i><h3>System Analysis</h3><p>Analisis kebutuhan, perancangan, dan dokumentasi sistem.</p></div>
+                    <div class="focus fade-in-up"><i class="fas fa-hashtag"></i><h3>Social Media</h3><p>Konten, kalender posting, dan analisis performa.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Pengalaman</h2>
+                <ol class="timeline">
+                    <li class="timeline-item fade-in-up">
+                        <div class="timeline-meta">Sep 2026 – Sekarang</div>
+                        <h3>Programmer &amp; System Analyst</h3>
+                        <p class="timeline-org">Anara Trisakti Medika · Magang · Jakarta Timur</p>
+                    </li>
+                    <li class="timeline-item fade-in-up">
+                        <div class="timeline-meta">Agt 2025 – Okt 2025</div>
+                        <h3>Social Media Specialist / Marketing Intern</h3>
+                        <p class="timeline-org">Rutee · Magang · Remote</p>
+                        <ul>
+                            <li>Mengelola dan mengembangkan konten media sosial untuk meningkatkan engagement dan brand awareness.</li>
+                            <li>Menganalisis performa konten memakai insight dan metrik media sosial sebagai dasar evaluasi strategi.</li>
+                            <li>Membantu perencanaan kalender konten dan ide kampanye digital.</li>
+                            <li>Berkolaborasi dengan tim menjaga konsistensi branding dan komunikasi digital.</li>
+                        </ul>
+                    </li>
+                    <li class="timeline-item fade-in-up">
+                        <div class="timeline-meta">Agt 2025 – Sep 2025</div>
+                        <h3>IT Intern</h3>
+                        <p class="timeline-org">Kementerian Perhubungan Republik Indonesia · Magang · Jakarta Pusat</p>
+                        <div class="tags"><span>Analytical Skills</span><span>Software System Analysis</span></div>
+                    </li>
+                    <li class="timeline-item fade-in-up">
+                        <div class="timeline-meta">Agt 2022 – Nov 2022</div>
+                        <h3>Kitchen Staff</h3>
+                        <p class="timeline-org">Starbucks · Paruh waktu · Jakarta Timur</p>
+                        <ul>
+                            <li>Menyiapkan makanan sesuai standar kualitas dan kebersihan, serta mengelola inventaris bahan di dapur.</li>
+                            <li>Bekerja sama dengan tim barista untuk memenuhi pesanan pelanggan dengan cepat.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h2 class="section-title section-title-sm fade-in-up">Pendidikan</h2>
+                <div class="edu-grid">
+                    <div class="edu fade-in-up">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h3>Universitas Gunadarma</h3>
+                            <p>S1 Sistem Informasi, Sarjana Komputer (S.Kom)</p>
+                            <p class="muted">Sep 2022 – Agt 2026 · IPK 3,76 / 4,00</p>
+                            <p class="muted">Skripsi: Market Basket Analysis dengan algoritma Apriori</p>
                         </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">📊</span>
-                            <div class="highlight-text">
-                                <h4>Data Analysis</h4>
-                                <p>Menganalisis & visualisasi data</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🎯</span>
-                            <div class="highlight-text">
-                                <h4>Project Management</h4>
-                                <p>Mengelola proyek TI dengan profesional</p>
-                            </div>
+                    </div>
+                    <div class="edu fade-in-up">
+                        <i class="fas fa-school"></i>
+                        <div>
+                            <h3>SMA Negeri 91 Jakarta</h3>
+                            <p>Ilmu Pengetahuan Sosial (IPS)</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="fade-in-up">My Skills</h2>
-            <div class="skills-carousel fade-in-up">
-                <button type="button" class="skills-arrow skills-prev" aria-label="Skill sebelumnya"><i class="fas fa-chevron-left"></i></button>
-                <button type="button" class="skills-arrow skills-next" aria-label="Skill berikutnya"><i class="fas fa-chevron-right"></i></button>
-                <div class="skills-track">
-                    <div class="skills-track-inner">
-                        <div class="skill-slide">
-                            <div class="skills-grid">
-                                <div class="skill">
-                                    <div class="skill-icon"><i class="fab fa-js-square"></i></div>
-                                    <h3>JavaScript</h3> 
-                                </div>
-                                <div class="skill">
-                                    <div class="skill-icon"><i class="fab fa-python"></i></div>
-                                    <h3>Python</h3>
-                                </div>
-                                <div class="skill">
-                                    <div class="skill-icon"><i class="fas fa-hashtag"></i></div>
-                                    <h3>Social Media Marketing</h3>
-                                </div>
-                                <div class="skill">
-                                    <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-                                    <h3>SEO & Analytics</h3>
-                                </div>
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Proyek</h2>
+                <div class="filters fade-in-up" role="group" aria-label="Filter proyek">
+                    <button type="button" class="filter active" data-filter="all">Semua</button>
+                    <button type="button" class="filter" data-filter="web">Web</button>
+                    <button type="button" class="filter" data-filter="data">Data</button>
+                    <button type="button" class="filter" data-filter="iot">IoT &amp; AI</button>
+                </div>
+                <div class="project-grid">
+                    <article class="project fade-in-up" data-category="data">
+                        <div class="project-cover cover-data"><i class="fas fa-basket-shopping"></i></div>
+                        <div class="project-body">
+                            <span class="project-label">Skripsi</span>
+                            <h3>Market Basket Analysis — Apriori</h3>
+                            <p>Menganalisis data transaksi penjualan untuk menemukan hubungan antar menu, lalu menghasilkan rekomendasi bundling. Alurnya: pembersihan data, transformasi, algoritma Apriori, dan association rules.</p>
+                            <div class="tags"><span>Python</span><span>Pandas</span><span>Apriori</span><span>Association Rules</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project fade-in-up" data-category="web">
+                        <div class="project-cover"><img src="webproj_bengkel_1.jpg" alt="Tampilan website Bedjo Garage" loading="lazy"></div>
+                        <div class="project-body">
+                            <span class="project-label">Web App</span>
+                            <h3>Bedjo Garage</h3>
+                            <p>Website bengkel motor: booking servis online dengan slot terbatas, pembayaran DP via QRIS dengan verifikasi admin, toko oli dan sparepart, serta panel admin.</p>
+                            <div class="tags"><span>PHP 8</span><span>SQLite</span><span>JavaScript</span></div>
+                            <div class="project-links">
+                                <a href="https://github.com/anggerr24/bedjo-garage-website" target="_blank" rel="noopener"><i class="fab fa-github"></i> Kode</a>
+                                <a href="project_web_development.html"><i class="fas fa-images"></i> Galeri</a>
                             </div>
                         </div>
-                        <div class="skill-slide">
-                            <div class="skills-grid">
-                                <div class="skill">
-                                    <div class="skill-icon"><i class="fas fa-file-alt"></i></div>
-                                    <h3>Microsoft Office</h3></p>
-                                </div>
-                                <div class="skill">
-                                    <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
-                                    <h3>Power BI</h3>
-                                </div>
-                                <div class="skill">
-                                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                                    <h3>SQL</h3>
-                                </div>
-                                <div class="skill">
-                                    <div class="skill-icon"><i class="fas fa-code"></i></div>
-                                    <h3>C/C++</h3>
-                                </div>
+                    </article>
+
+                    <article class="project fade-in-up" data-category="web data">
+                        <div class="project-cover cover-web"><i class="fas fa-laptop"></i></div>
+                        <div class="project-body">
+                            <span class="project-label">Sistem Penunjang Keputusan</span>
+                            <h3>LaptopVerse — SPK Metode SAW</h3>
+                            <p>Membantu pengguna memilih laptop sesuai prioritas mereka. Sistem menormalisasi data, menghitung nilai preferensi dengan Simple Additive Weighting, lalu menampilkan peringkat, perbandingan, dan daftar favorit.</p>
+                            <div class="tags"><span>PHP 8</span><span>MySQL</span><span>Bootstrap 5</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project fade-in-up" data-category="web">
+                        <div class="project-cover cover-web"><i class="fas fa-car-burst"></i></div>
+                        <div class="project-body">
+                            <span class="project-label">Sistem Pakar</span>
+                            <h3>Sistem Pakar Kerusakan Mobil</h3>
+                            <p>Mendiagnosa kerusakan umum pada mobil berdasarkan gejala yang dipilih pengguna.</p>
+                            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            <div class="project-links">
+                                <a href="https://sistem-pakar-laptop-gamma.vercel.app" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Demo</a>
+                                <a href="https://github.com/anggerr24/sistem_pakar_laptop" target="_blank" rel="noopener"><i class="fab fa-github"></i> Kode</a>
                             </div>
                         </div>
-                        <div class="skill-slide">
-                            <div class="skills-grid">
-                                <div class="skill">
-                                    <div class="skill-icon"><i class="fab fa-php"></i></div>
-                                    <h3>PHP</h3>
-                                </div>
-                                <div class="skill">
-                                    <div class="skill-icon"><i class="fab fa-html5"></i></div>
-                                    <h3>HTML</h3>
-                                </div>
-                                <div class="skill">
-                                    <div class="skill-icon"><i class="fas fa-palette"></i></div>
-                                    <h3>Canva</h3>
-                                </div>
-                                <div class="skill">
-                                    <div class="skill-icon"><i class="fas fa-video"></i></div>
-                                    <h3>Cap Cut</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skills-dots" role="tablist" aria-label="Navigasi slide skill">
-                    <button type="button" class="skills-dot active" aria-label="Slide 1" aria-selected="true"></button>
-                    <button type="button" class="skills-dot" aria-label="Slide 2" aria-selected="false"></button>
-                    <button type="button" class="skills-dot" aria-label="Slide 3" aria-selected="false"></button>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </article>
 
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="fade-in-up">My Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="project fade-in-up delay-1">
-                    <div class="project-img-wrap">
-                        <img src="webdev.jpg" alt="Project 1">
-                    </div>
-                        <div class="project-content">
-                            <h3>Web App Development</h3>
-                            <a href="project_web_development.html" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+                    <article class="project fade-in-up" data-category="web">
+                        <div class="project-cover cover-web"><i class="fas fa-motorcycle"></i></div>
+                        <div class="project-body">
+                            <span class="project-label">Sistem Pakar</span>
+                            <h3>Sistem Pakar Diagnosa Kerusakan Motor</h3>
+                            <p>Mengidentifikasi masalah pada motor dari gejala yang dialami pengguna, dengan basis aturan yang tersimpan di database.</p>
+                            <div class="tags"><span>PHP</span><span>MySQL</span></div>
                         </div>
-                </div>
-                <div class="project fade-in-up delay-2">
-                    <div class="project-img-wrap">
-                        <img src="sosmed.jpg" alt="Project 2">
-                    </div>
-                    <div class="project-content">
-                            <h3>Social Media Specialist</h3>
-                            <a href="project_social_media.html" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
-                    </div>
-                </div>
-                <div class="project fade-in-up delay-3">
-                    <div class="project-img-wrap">
-                        <img src="datnal.jpg" alt="Project 3">
-                    </div>
-                    <div class="project-content">
-                            <h3>Data Analysis</h3>
-                            <a href="project_data_analysis.html" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </article>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="fade-in-up">Contact</h2>
-            <div class="contact-links">
-                <a href="mailto:your@email.com" class="contact-item fade-in-up delay-1">
-                    <i class="fas fa-user"></i>
-                    <span class="contact-label">Contact Person</span>
-                    <span class="contact-value">Angger Rizky Rambudia</span>
-                </a>
-                <a href="https://www.instagram.com/angger_rzky/" target="_blank" rel="noopener" class="contact-item fade-in-up delay-2">
-                    <i class="fab fa-instagram"></i>
-                    <span class="contact-label">Instagram</span>
-                    <span class="contact-value">@angger_rzky</span>
-                </a>
-                <a href="https://www.linkedin.com/in/angger-rizky-rambudia-972556255/" target="_blank" rel="noopener" class="contact-item fade-in-up delay-3">
-                    <i class="fab fa-linkedin-in"></i>
-                    <span class="contact-label">LinkedIn</span>
-                    <span class="contact-value">Angger Rizky Rambudia</span>
-                </a>
-                <a href="https://github.com/anggerr24" target="_blank" rel="noopener" class="contact-item fade-in-up delay-4">
-                    <i class="fab fa-github"></i>
-                    <span class="contact-label">GitHub</span>
-                    <span class="contact-value">anggerr24</span>
-                </a>
+                    <article class="project fade-in-up" data-category="iot">
+                        <div class="project-cover cover-iot"><i class="fas fa-microchip"></i></div>
+                        <div class="project-body">
+                            <span class="project-label">IoT · Computer Vision</span>
+                            <h3>IoT Deteksi Umur</h3>
+                            <p>Webcam mendeteksi wajah dengan YOLOv8 dan memperkirakan umur. Hasilnya tampil di dashboard web dan dikirim ke ESP32 yang menampilkannya di LCD serta menyalakan LED sesuai kategori umur.</p>
+                            <div class="tags"><span>Python</span><span>YOLOv8</span><span>OpenCV</span><span>Flask</span><span>ESP32</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project fade-in-up" data-category="web data">
+                        <div class="project-cover cover-data"><i class="fas fa-spray-can-sparkles"></i></div>
+                        <div class="project-body">
+                            <span class="project-label">Web App</span>
+                            <h3>Banding Parfum</h3>
+                            <p>Membandingkan 145 parfum lokal dan impor dari 46 merek berdasarkan harga, kualitas, dan notes. Ada skor value, perbandingan hingga 4 parfum, dan pencarian parfum mirip berdasarkan kesamaan notes.</p>
+                            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                        </div>
+                    </article>
+                </div>
+                <p class="more-link fade-in-up">Detail per bidang:
+                    <a href="project_web_development.html">Web Development</a> ·
+                    <a href="project_data_analysis.html">Data Analysis</a> ·
+                    <a href="project_social_media.html">Social Media</a>
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Keahlian</h2>
+                <div class="skill-groups">
+                    <div class="skill-group fade-in-up">
+                        <h3><i class="fas fa-code"></i> Pemrograman</h3>
+                        <ul class="chips">
+                            <li><i class="fab fa-python"></i> Python</li>
+                            <li><i class="fab fa-php"></i> PHP</li>
+                            <li><i class="fab fa-js"></i> JavaScript</li>
+                            <li><i class="fab fa-html5"></i> HTML &amp; CSS</li>
+                            <li><i class="fas fa-database"></i> SQL / MySQL</li>
+                            <li><i class="fas fa-terminal"></i> C/C++</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group fade-in-up">
+                        <h3><i class="fas fa-chart-line"></i> Data</h3>
+                        <ul class="chips">
+                            <li>Pandas</li>
+                            <li>Power BI</li>
+                            <li>Tableau</li>
+                            <li>Microsoft Excel</li>
+                            <li>Data Analysis</li>
+                            <li>Data Entry</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group fade-in-up">
+                        <h3><i class="fas fa-diagram-project"></i> Sistem &amp; Infrastruktur</h3>
+                        <ul class="chips">
+                            <li>Software System Analysis</li>
+                            <li>Project Management</li>
+                            <li>Cisco Networking</li>
+                            <li>Ethical Hacking</li>
+                            <li><i class="fab fa-git-alt"></i> Git &amp; GitHub</li>
+                            <li>Microsoft Office</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group fade-in-up">
+                        <h3><i class="fas fa-bullhorn"></i> Media Sosial &amp; Kreatif</h3>
+                        <ul class="chips">
+                            <li>Social Media Marketing</li>
+                            <li>SEO &amp; Analytics</li>
+                            <li>Brand Awareness</li>
+                            <li>Canva</li>
+                            <li>CapCut</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="languages fade-in-up"><i class="fas fa-language"></i> Bahasa Indonesia (profesional) · Bahasa Inggris (terbatas namun fungsional)</p>
+            </div>
+        </section>
+
+        <section id="certifications" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Sertifikasi</h2>
+                <ul class="cert-list">
+                    <li class="cert fade-in-up"><span class="cert-date">Feb 2026</span><h3>Data Visualization with Tableau &amp; Data Wrangling with Python</h3><p>Pacmann</p></li>
+                    <li class="cert fade-in-up"><span class="cert-date">Feb 2026</span><h3>Excel Hacks for Business Professional</h3><p>Pacmann</p></li>
+                    <li class="cert fade-in-up"><span class="cert-date">Feb 2026</span><h3>Ethical Hacker For Dummies</h3><p>Digital Talent Scholarship</p></li>
+                    <li class="cert fade-in-up"><span class="cert-date">Sep 2025</span><h3>Analyze Software Requirements</h3><p>Universitas Gunadarma</p></li>
+                    <li class="cert fade-in-up"><span class="cert-date">Des 2024</span><h3>Introduction to Cloud and AI Applications for Digital Business</h3><p>Digital Talent Scholarship</p></li>
+                    <li class="cert fade-in-up"><span class="cert-date">Des 2024</span><h3>Microcredential — Startup Foundation</h3><p>Digital Talent Scholarship</p></li>
+                    <li class="cert fade-in-up"><span class="cert-date">Des 2024</span><h3>Introduction to Wireless LAN Installation</h3><p>Universitas Gunadarma</p></li>
+                    <li class="cert fade-in-up"><span class="cert-date">Agt 2023</span><h3>Fundamental Networking</h3><p>Universitas Gunadarma</p></li>
+                    <li class="cert fade-in-up"><span class="cert-date">Feb 2023</span><h3>Fundamental DBMS</h3><p>Universitas Gunadarma</p></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Kontak</h2>
+                <p class="contact-intro fade-in-up">Tertarik bekerja sama atau punya lowongan yang cocok? Silakan hubungi saya.</p>
+                <div class="contact-links">
+                    <a href="mailto:angger2434@gmail.com" class="contact-item fade-in-up">
+                        <i class="fas fa-envelope"></i>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">angger2434@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/angger-rizky-rambudia-972556255/" target="_blank" rel="noopener" class="contact-item fade-in-up">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">Angger Rizky Rambudia</span>
+                    </a>
+                    <a href="https://github.com/anggerr24" target="_blank" rel="noopener" class="contact-item fade-in-up">
+                        <i class="fab fa-github"></i>
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">anggerr24</span>
+                    </a>
+                    <a href="https://www.instagram.com/angger_rzky/" target="_blank" rel="noopener" class="contact-item fade-in-up">
+                        <i class="fab fa-instagram"></i>
+                        <span class="contact-label">Instagram</span>
+                        <span class="contact-value">@angger_rzky</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Angger Rizky Rambudia. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://github.com/anggerr24"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/angger-rizky-rambudia-972556255/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/angger_rzky/"><i class="fab fa-instagram"></i></a>
-            </div>
+            <p>&copy; 2026 Angger Rizky Rambudia</p>
+            <a href="#home" class="back-top" aria-label="Kembali ke atas"><i class="fas fa-arrow-up"></i></a>
         </div>
     </footer>
 
-    <script src="animations.js"></script>
-    <script src="skills.js"></script>
     <script src="header.js"></script>
+    <script src="animations.js"></script>
 </body>
 </html>

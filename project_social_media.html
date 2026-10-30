@@ -1,63 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects — Social Media Specialist</title>
+    <title>Social Media — Angger Rizky Rambudia</title>
+    <meta name="description" content="Pengalaman social media Angger Rizky Rambudia sebagai Social Media Specialist di Rutee.">
+    <meta name="theme-color" content="#0b1120">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Angger Rizky Rambudia</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+            <a href="index.html" class="logo">Angger<span>.</span></a>
+            <button type="button" class="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Beranda</a></li>
                 <li><a href="project_web_development.html">Web Dev</a></li>
-                <li><a href="project_social_media.html">Social Media</a></li>
                 <li><a href="project_data_analysis.html">Data Analysis</a></li>
+                <li><a href="project_social_media.html" class="active">Social Media</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Kontak</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container" style="padding-top:120px;">
-        <section class="projects-list">
-            <h2>Social Media Projects</h2>
-            <p style="text-align:center; max-width:820px; margin:0 auto 32px;">Proyek kampanye media sosial, pembuatan konten, dan analitik performa. Termasuk strategi konten, kalender posting, dan optimasi KPI.</p>
-
-            <div class="portfolio-grid">
-                <div class="project">
-                    <div class="project-img-wrap"><img src="sosmed.jpg" alt="Sosmed 1"></div>
-                    <div class="project-content">
-                        <h3>Kampanye Peluncuran Produk</h3>
-                        <p>Merancang strategi konten dan menjalankan kampanye Instagram & TikTok untuk peluncuran produk lokal. Hasil: peningkatan engagement 45% selama 4 minggu.</p>
-                        <p><strong>Tanggung Jawab:</strong> Strategi konten, pembuatan kreatif, analisis performa.</p>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <div class="project-img-wrap"><img src="sosmed2.jpg" alt="Sosmed 2"></div>
-                    <div class="project-content">
-                        <h3>Manajemen Akun & Growth</h3>
-                        <p>Pengelolaan akun bisnis dengan kalender konten, optimasi hashtag, dan A/B testing konten. Fokus pada peningkatan follower organik dan konversi.</p>
-                        <p><strong>Tools:</strong> Canva, Meta Business Suite, Google Analytics</p>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <div class="project-img-wrap"><img src="sosmed3.jpg" alt="Sosmed 3"></div>
-                    <div class="project-content">
-                        <h3>Konten Edukatif & Visual</h3>
-                        <p>Pembuatan materi visual untuk edukasi pengguna, termasuk infografis dan micro-videos. Konten dioptimasi untuk shareability dan retention.</p>
-                        <p><strong>Peran:</strong> Desain konten, scripting, editing video.</p>
-                    </div>
-                </div>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Social Media</h1>
+                <p>Pengalaman mengelola konten media sosial, merencanakan kalender konten, dan mengevaluasi performa berdasarkan data insight.</p>
             </div>
+        </section>
 
-            <div style="text-align:center; margin-top:40px;">
-                <a href="index.html" class="btn">Kembali ke Beranda</a>
+        <section class="page-section">
+            <div class="container">
+                <h2>Pengalaman</h2>
+                <div class="detail-list">
+                    <article class="detail">
+                        <div class="project-cover"><img src="sosmed.jpg" alt="Ilustrasi media sosial" loading="lazy"></div>
+                        <div class="project-body">
+                            <span class="project-label">Magang · Remote · Agt – Okt 2025</span>
+                            <h3>Social Media Specialist / Marketing Intern — Rutee</h3>
+                            <ul>
+                                <li>Mengelola dan mengembangkan konten media sosial untuk meningkatkan engagement dan brand awareness.</li>
+                                <li>Menganalisis performa konten memakai insight dan metrik media sosial sebagai dasar evaluasi strategi.</li>
+                                <li>Membantu perencanaan kalender konten dan ide kampanye digital.</li>
+                                <li>Berkolaborasi dengan tim menjaga konsistensi branding dan komunikasi digital.</li>
+                            </ul>
+                            <div class="tags"><span>Social Media</span><span>Content Planning</span><span>Analytical Skills</span><span>Brand Awareness</span></div>
+                        </div>
+                    </article>
+                </div>
+
+                <h2>Tools</h2>
+                <ul class="chips">
+                    <li><i class="fas fa-palette"></i> Canva</li>
+                    <li><i class="fas fa-video"></i> CapCut</li>
+                    <li><i class="fab fa-instagram"></i> Instagram</li>
+                    <li><i class="fas fa-chart-line"></i> SEO &amp; Analytics</li>
+                    <li><i class="fas fa-file-excel"></i> Microsoft Excel</li>
+                </ul>
+
+                <div class="page-back">
+                    <a href="index.html#experience" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+                </div>
             </div>
         </section>
     </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Angger Rizky Rambudia</p>
+            <a href="index.html" class="back-top" aria-label="Beranda"><i class="fas fa-house"></i></a>
+        </div>
+    </footer>
 
     <script src="header.js"></script>
 </body>

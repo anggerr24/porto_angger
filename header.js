@@ -1,56 +1,59 @@
-window.addEventListener('scroll', function() {
+(function () {
+    'use strict';
+
     var header = document.querySelector('header');
-    if (!header) return;
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
+    var toggle = document.querySelector('.nav-toggle');
+    var navLinks = document.querySelector('.nav-links');
 
-document.querySelectorAll('.nav-links a').forEach(function(anchor) {
-    anchor.addEventListener('click', function(e) {
-        var href = this.getAttribute('href');
-        if (!href) return;
-        // Only intercept same-page hash links (scroll to section). Allow normal navigation for page links.
-        if (href.trim().charAt(0) === '#') {
-            e.preventDefault();
-            var target = document.querySelector(href);
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
-        }
+    function onScroll() {
+        if (header) header.classList.toggle('scrolled', window.scrollY > 30);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Menu mobile
+    function setMenu(open) {
+        if (!navLinks || !toggle) return;
+        navLinks.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+        toggle.innerHTML = open ? '<i class="fas fa-xmark"></i>' : '<i class="fas fa-bars"></i>';
+    }
+
+    if (toggle) {
+        toggle.addEventListener('click', function () {
+            setMenu(!navLinks.classList.contains('open'));
+        });
+    }
+
+    if (navLinks) {
+        navLinks.querySelectorAll('a').forEach(function (a) {
+            a.addEventListener('click', function () { setMenu(false); });
+        });
+    }
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setMenu(false);
     });
-});
 
-// Fallback: ensure `.btn` links navigate even if other handlers prevent default
-document.querySelectorAll('a.btn').forEach(function(link){
-    link.addEventListener('click', function(e){
-        try {
-            var href = this.getAttribute('href');
-            if (!href) return;
-            // ignore same-page anchors
-            if (href.trim().charAt(0) === '#') return;
-            // stop other handlers from blocking navigation and navigate explicitly
-            e.stopImmediatePropagation();
-            window.location.href = this.href;
-        } catch (err) {
-            // fallback: allow default behavior
-        }
-    }, { passive: false });
-});
+    // Tandai menu sesuai section yang sedang terlihat
+    var sectionLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    if (sectionLinks.length && 'IntersectionObserver' in window) {
+        var linkById = {};
+        sectionLinks.forEach(function (a) { linkById[a.getAttribute('href').slice(1)] = a; });
 
-// Capture-phase handler: ensure `.btn` anchors navigate on Edge
-document.addEventListener('click', function(e){
-    try {
-        if (e.button !== 0) return; // only left-click
-        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // allow modified clicks
-        var link = e.target.closest && e.target.closest('a.btn');
-        if (!link) return;
-        var href = link.getAttribute('href');
-        if (!href) return;
-        if (href.trim().charAt(0) === '#') return;
-        e.preventDefault();
-        window.location.href = link.href;
-    } catch (err) {
-        // ignore
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                sectionLinks.forEach(function (a) { a.classList.remove('active'); });
+                var link = linkById[entry.target.id];
+                if (link && !link.classList.contains('nav-cta')) link.classList.add('active');
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+
+        Object.keys(linkById).forEach(function (id) {
+            var section = document.getElementById(id);
+            if (section) observer.observe(section);
+        });
     }
-}, true);
+})();

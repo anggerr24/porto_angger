@@ -1,95 +1,73 @@
 (function () {
     'use strict';
 
+    document.documentElement.classList.add('js');
+
     var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Typing effect
+    // Typing effect: ganti-ganti peran di hero
     var typingEl = document.getElementById('typing-text');
-    var cursorEl = document.getElementById('typing-cursor');
-    var typingPhrase = 'My Portfolio';
-    var typingSpeed = 120;
-    var pauseEnd = 2500;
-    var pauseStart = 600;
+    var roles = ['Programmer', 'System Analyst', 'Data Analyst', 'Social Media Specialist'];
 
-    if (typingEl) {
-        if (prefersReducedMotion) {
-            typingEl.innerHTML = '<span>' + typingPhrase + '</span>';
-            if (cursorEl) cursorEl.style.display = 'none';
-        } else {
-        var index = 0;
-        var isDeleting = false;
-        var cursorVisible = true;
+    if (typingEl && !prefersReducedMotion) {
+        var roleIndex = 0;
+        var charIndex = roles[0].length;
+        var isDeleting = true;
 
         function typeStep() {
-            var text = typingPhrase.slice(0, index);
-            typingEl.innerHTML = text ? '<span>' + text + '</span>' : '';
-            if (cursorEl) cursorEl.style.opacity = cursorVisible ? '1' : '0';
-            cursorVisible = !cursorVisible;
+            var role = roles[roleIndex];
+            typingEl.textContent = role.slice(0, charIndex);
 
-            if (!isDeleting) {
-                if (index < typingPhrase.length) {
-                    index++;
-                    setTimeout(typeStep, typingSpeed);
-                } else {
-                    isDeleting = true;
-                    setTimeout(typeStep, pauseEnd);
-                }
-            } else {
-                if (index > 0) {
-                    index--;
-                    setTimeout(typeStep, typingSpeed / 2);
+            if (isDeleting) {
+                if (charIndex > 0) {
+                    charIndex--;
+                    setTimeout(typeStep, 45);
                 } else {
                     isDeleting = false;
-                    setTimeout(typeStep, pauseStart);
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    setTimeout(typeStep, 300);
                 }
+            } else if (charIndex < roles[roleIndex].length) {
+                charIndex++;
+                setTimeout(typeStep, 90);
+            } else {
+                isDeleting = true;
+                setTimeout(typeStep, 2200);
             }
         }
 
-        setTimeout(function () {
-            typeStep();
-        }, 400);
-        }
+        setTimeout(typeStep, 2200);
     }
 
-    // Parallax effect
-    var parallaxBg = document.getElementById('parallax-bg');
-    if (parallaxBg && !prefersReducedMotion) {
-        window.addEventListener('scroll', function () {
-            var scrolled = window.pageYOffset;
-            var move = scrolled * 0.4;
-            parallaxBg.style.transform = 'translate3d(0, ' + move + 'px, 0) scale(1.4)';
-        }, { passive: true });
+    // Fade-in saat discroll
+    var fadeEls = document.querySelectorAll('.fade-in-up');
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        fadeEls.forEach(function (el) { el.classList.add('reveal'); });
+    } else {
+        var revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        fadeEls.forEach(function (el) { revealObserver.observe(el); });
     }
 
-    // Fade-in on scroll
-    var observerOptions = { threshold: 0.12, rootMargin: '0px 0px -40px 0px' };
-    var revealObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('reveal');
-                revealObserver.unobserve(entry.target);
-            }
+    // Filter proyek
+    var filters = document.querySelectorAll('.filter');
+    var projects = document.querySelectorAll('.project[data-category]');
+
+    filters.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var filter = btn.dataset.filter;
+            filters.forEach(function (b) { b.classList.toggle('active', b === btn); });
+            projects.forEach(function (p) {
+                var match = filter === 'all' || p.dataset.category.split(' ').indexOf(filter) !== -1;
+                p.classList.toggle('hidden', !match);
+                if (match) p.classList.add('reveal');
+            });
         });
-    }, observerOptions);
-
-    document.querySelectorAll('.fade-in-up').forEach(function (el) {
-        if (prefersReducedMotion) el.classList.add('reveal');
-        else revealObserver.observe(el);
     });
-
-    // Section reveal
-    var sectionObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('reveal-section');
-                sectionObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.08 });
-
-    document.querySelectorAll('section').forEach(function (section) {
-        if (prefersReducedMotion) section.classList.add('reveal-section');
-        else sectionObserver.observe(section);
-    });
-
 })();

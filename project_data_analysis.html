@@ -1,63 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects — Data Analysis</title>
+    <title>Proyek Data Analysis — Angger Rizky Rambudia</title>
+    <meta name="description" content="Proyek analisis data Angger Rizky Rambudia, termasuk skripsi Market Basket Analysis dengan algoritma Apriori.">
+    <meta name="theme-color" content="#0b1120">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Angger Rizky Rambudia</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+            <a href="index.html" class="logo">Angger<span>.</span></a>
+            <button type="button" class="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Beranda</a></li>
                 <li><a href="project_web_development.html">Web Dev</a></li>
+                <li><a href="project_data_analysis.html" class="active">Data Analysis</a></li>
                 <li><a href="project_social_media.html">Social Media</a></li>
-                <li><a href="project_data_analysis.html">Data Analysis</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Kontak</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container" style="padding-top:120px;">
-        <section class="projects-list">
-            <h2>Data Analysis Projects</h2>
-            <p style="text-align:center; max-width:820px; margin:0 auto 32px;">Proyek analisis data termasuk pembersihan data, eksplorasi, visualisasi, dan dashboarding untuk pengambilan keputusan bisnis.</p>
-
-            <div class="portfolio-grid">
-                <div class="project">
-                    <div class="project-img-wrap"><img src="datnal.jpg" alt="Data 1"></div>
-                    <div class="project-content">
-                        <h3>Sales Dashboard</h3>
-                        <p>Mengolah data penjualan untuk membuat dashboard interaktif menggunakan Power BI. Menyediakan KPI, tren penjualan, dan segmentasi pelanggan.</p>
-                        <p><strong>Teknologi:</strong> Power BI, SQL, Python (pandas)</p>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <div class="project-img-wrap"><img src="datnal2.jpg" alt="Data 2"></div>
-                    <div class="project-content">
-                        <h3>Analisis Churn Pelanggan</h3>
-                        <p>Analisis faktor churn dengan model statistik dan visualisasi untuk rekomendasi retention. Menyediakan insight actionable untuk tim marketing.</p>
-                        <p><strong>Tools:</strong> Python, matplotlib, seaborn, scikit-learn</p>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <div class="project-img-wrap"><img src="datnal3.jpg" alt="Data 3"></div>
-                    <div class="project-content">
-                        <h3>Cleaning & ETL Pipeline</h3>
-                        <p>Membangun pipeline pembersihan dan transformasi data untuk integrasi reporting, termasuk dokumentasi langkah pembersihan dan sample kode.</p>
-                        <p><strong>Peran:</strong> ETL scripting, dokumentasi, validasi data.</p>
-                    </div>
-                </div>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Data Analysis</h1>
+                <p>Mengolah data mentah menjadi insight: pembersihan, transformasi, analisis, dan visualisasi. Tools yang saya pakai antara lain Python (Pandas), Power BI, Tableau, Excel, dan SQL.</p>
             </div>
+        </section>
 
-            <div style="text-align:center; margin-top:40px;">
-                <a href="index.html" class="btn">Kembali ke Beranda</a>
+        <section class="page-section">
+            <div class="container">
+                <h2>Proyek</h2>
+                <div class="detail-list">
+                    <article class="detail">
+                        <div class="project-cover"><img src="datnal.jpg" alt="Ilustrasi analisis data" loading="lazy"></div>
+                        <div class="project-body">
+                            <span class="project-label">Skripsi</span>
+                            <h3>Market Basket Analysis — Algoritma Apriori</h3>
+                            <p>Menganalisis data transaksi penjualan untuk menemukan menu yang sering dibeli bersamaan, lalu menyusun rekomendasi bundling menu.</p>
+                            <ul>
+                                <li>Data processing dan data cleaning pada data transaksi.</li>
+                                <li>Transformasi data ke format keranjang belanja (basket).</li>
+                                <li>Menjalankan algoritma Apriori untuk mencari frequent itemset.</li>
+                                <li>Membentuk association rules sebagai dasar rekomendasi bundling.</li>
+                            </ul>
+                            <div class="tags"><span>Python</span><span>Pandas</span><span>Apriori</span><span>Association Rule Mining</span></div>
+                        </div>
+                    </article>
+
+                    <article class="detail">
+                        <div class="project-cover cover-data"><i class="fas fa-ranking-star"></i></div>
+                        <div class="project-body">
+                            <span class="project-label">Analisis Keputusan</span>
+                            <h3>LaptopVerse — Perangkingan dengan SAW</h3>
+                            <p>Menerapkan Simple Additive Weighting: normalisasi tiap kriteria, pembobotan sesuai prioritas pengguna, lalu perangkingan alternatif laptop.</p>
+                            <div class="tags"><span>SAW</span><span>MySQL</span><span>PHP</span></div>
+                            <div class="project-links">
+                                <a href="project_web_development.html"><i class="fas fa-arrow-right"></i> Lihat di Web Development</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="detail">
+                        <div class="project-cover cover-data"><i class="fas fa-spray-can-sparkles"></i></div>
+                        <div class="project-body">
+                            <span class="project-label">Data &amp; Scoring</span>
+                            <h3>Banding Parfum — Skor Value</h3>
+                            <p>Menyusun dataset 145 parfum dari 46 merek, lalu menghitung skor value 0–100 dari kualitas (rating, ketahanan, proyeksi) dibanding harga per ml. Kemiripan antar parfum dihitung dengan Jaccard similarity pada notes.</p>
+                            <div class="tags"><span>Dataset</span><span>Scoring</span><span>Jaccard Similarity</span></div>
+                        </div>
+                    </article>
+                </div>
+
+                <h2>Sertifikasi Terkait</h2>
+                <ul class="cert-list">
+                    <li class="cert"><span class="cert-date">Feb 2026</span><h3>Data Visualization with Tableau &amp; Data Wrangling with Python</h3><p>Pacmann</p></li>
+                    <li class="cert"><span class="cert-date">Feb 2026</span><h3>Excel Hacks for Business Professional</h3><p>Pacmann</p></li>
+                    <li class="cert"><span class="cert-date">Feb 2023</span><h3>Fundamental DBMS</h3><p>Universitas Gunadarma</p></li>
+                </ul>
+
+                <div class="page-back">
+                    <a href="index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+                </div>
             </div>
         </section>
     </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Angger Rizky Rambudia</p>
+            <a href="index.html" class="back-top" aria-label="Beranda"><i class="fas fa-house"></i></a>
+        </div>
+    </footer>
 
     <script src="header.js"></script>
 </body>
