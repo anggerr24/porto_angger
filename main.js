@@ -5,6 +5,63 @@
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
+    /* ---------- Intro singkat (sekali per sesi) ---------- */
+    var intro = document.querySelector('.intro');
+    if (intro) {
+        var seen = false;
+        try { seen = sessionStorage.getItem('introSeen') === '1'; sessionStorage.setItem('introSeen', '1'); } catch (e) {}
+        if (seen || reduced) {
+            intro.remove();
+        } else {
+            var hideIntro = function () {
+                intro.classList.add('done');
+                setTimeout(function () { intro.remove(); }, 700);
+            };
+            var started = Date.now();
+            var finish = function () { setTimeout(hideIntro, Math.max(0, 1100 - (Date.now() - started))); };
+            if (document.readyState === 'complete') finish(); else window.addEventListener('load', finish);
+            setTimeout(hideIntro, 3000); /* pengaman kalau load lama */
+        }
+    }
+
+    /* ---------- Sapaan sesuai jam ---------- */
+    var greet = document.getElementById('greet');
+    if (greet) {
+        var h = new Date().getHours();
+        var w = h >= 4 && h < 11 ? 'pagi' : h >= 11 && h < 15 ? 'siang' : h >= 15 && h < 18 ? 'sore' : 'malam';
+        var ic = { pagi: '☀️', siang: '🌤️', sore: '🌇', malam: '🌙' }[w];
+        greet.textContent = '// selamat ' + w + ' ' + ic + ' saya';
+    }
+
+    /* ---------- Tooltip keahlian (melayang, tidak terpotong kartu) ---------- */
+    var tipChips = document.querySelectorAll('.chips li[data-tip]');
+    if (tipChips.length) {
+        var tip = document.createElement('div');
+        tip.className = 'skill-tip';
+        tip.setAttribute('role', 'tooltip');
+        document.body.appendChild(tip);
+        var showTip = function (el) {
+            tip.innerHTML = '';
+            var lbl = document.createElement('small'); lbl.textContent = 'dipakai di';
+            tip.appendChild(lbl);
+            tip.appendChild(document.createTextNode(el.getAttribute('data-tip')));
+            var r = el.getBoundingClientRect(), t = tip.getBoundingClientRect();
+            var x = Math.min(Math.max(8, r.left + r.width / 2 - t.width / 2), window.innerWidth - t.width - 8);
+            var y = r.top - t.height - 10;
+            if (y < 70) y = r.bottom + 10;
+            tip.style.left = x + 'px'; tip.style.top = y + 'px';
+            tip.classList.add('show');
+        };
+        var hideTip = function () { tip.classList.remove('show'); };
+        tipChips.forEach(function (el) {
+            el.addEventListener('mouseenter', function () { showTip(el); });
+            el.addEventListener('focus', function () { showTip(el); });
+            el.addEventListener('mouseleave', hideTip);
+            el.addEventListener('blur', hideTip);
+        });
+        window.addEventListener('scroll', hideTip, { passive: true });
+    }
+
     function cssVar(name) {
         return getComputedStyle(root).getPropertyValue(name).trim();
     }

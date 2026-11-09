@@ -27,6 +27,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="intro" aria-hidden="true">
+        <div class="intro-box">
+            <span class="intro-logo mono">&lt;/&gt;</span>
+            <span class="intro-name">Angger Rizky Rambudia</span>
+            <span class="intro-bar"><span></span></span>
+        </div>
+    </div>
     <a href="#main" class="skip-link">Langsung ke konten</a>
     <div class="progress" aria-hidden="true"></div>
     <div class="cursor-glow" aria-hidden="true"></div>
@@ -61,8 +68,8 @@
             <div class="wrap">
                 <div class="hero-grid">
                     <div>
-                        <span class="status mono"><span class="dot"></span> Open to work · Jakarta</span>
-                        <span class="hero-hello mono">// halo, saya</span>
+                        <a href="#contact" class="status mono" title="Terbuka untuk kerja penuh waktu, magang, dan kolaborasi"><span class="dot"></span> Open to work <span class="status-sep">·</span> Jakarta <i class="fas fa-arrow-right status-arrow"></i></a>
+                        <span class="hero-hello mono" id="greet">// halo, saya</span>
                         <h1><span class="gradient-text">Angger Rizky Rambudia</span></h1>
                         <p class="hero-role" aria-label="Programmer, System Analyst, Data Analyst">
                             <span class="prompt">&gt;</span> <span id="typing">Programmer</span><span class="cursor" aria-hidden="true"></span>
@@ -472,24 +479,24 @@
                     <div class="skill-group glass reveal">
                         <h3><i class="fas fa-code"></i> Pemrograman</h3>
                         <ul class="chips">
-                            <li><i class="fab fa-python"></i> Python</li>
-                            <li><i class="fab fa-php"></i> PHP</li>
-                            <li><i class="fab fa-js"></i> JavaScript</li>
-                            <li><i class="fab fa-html5"></i> HTML &amp; CSS</li>
-                            <li><i class="fas fa-database"></i> SQL</li>
+                            <li tabindex="0" data-tip="Banding Parfum · Market Basket Analysis · IoT Deteksi Umur"><i class="fab fa-python"></i> Python</li>
+                            <li tabindex="0" data-tip="Bedjo Garage · LaptopVerse · Diagnosa Motor"><i class="fab fa-php"></i> PHP</li>
+                            <li tabindex="0" data-tip="Banding Parfum · Sistem Pakar Mobil · Bedjo Garage"><i class="fab fa-js"></i> JavaScript</li>
+                            <li tabindex="0" data-tip="Semua proyek web, termasuk portofolio ini"><i class="fab fa-html5"></i> HTML &amp; CSS</li>
+                            <li tabindex="0" data-tip="MySQL &amp; SQLite: Bedjo Garage · LaptopVerse"><i class="fas fa-database"></i> SQL</li>
                             <li><i class="fas fa-terminal"></i> C/C++</li>
                         </ul>
                     </div>
                     <div class="skill-group glass reveal" style="--d:.08s">
                         <h3><i class="fas fa-chart-line"></i> Data</h3>
                         <ul class="chips">
-                            <li>Pandas</li><li>Power BI</li><li>Tableau</li><li>Excel</li><li>Web Scraping</li><li>Data Entry</li>
+                            <li tabindex="0" data-tip="Market Basket Analysis"><i class="fas fa-table"></i> Pandas</li><li tabindex="0" data-tip="4 dashboard di Data Visualization"><i class="fas fa-chart-column"></i> Power BI</li><li tabindex="0" data-tip="Sertifikasi Pacmann"><i class="fas fa-chart-area"></i> Tableau</li><li tabindex="0" data-tip="Sertifikasi Pacmann Excel Hacks"><i class="fas fa-file-excel"></i> Excel</li><li tabindex="0" data-tip="Data harga Banding Parfum"><i class="fas fa-spider"></i> Web Scraping</li><li>Data Entry</li>
                         </ul>
                     </div>
                     <div class="skill-group glass reveal" style="--d:.16s">
                         <h3><i class="fas fa-diagram-project"></i> Sistem</h3>
                         <ul class="chips">
-                            <li>System Analysis</li><li>Project Management</li><li>Cisco Networking</li><li>Ethical Hacking</li><li><i class="fab fa-git-alt"></i> Git</li><li>Vercel</li>
+                            <li>System Analysis</li><li>Project Management</li><li>Cisco Networking</li><li>Ethical Hacking</li><li tabindex="0" data-tip="Semua proyek di GitHub anggerr24"><i class="fab fa-git-alt"></i> Git</li><li tabindex="0" data-tip="Hosting web live di proyek ini"><i class="fas fa-cloud"></i> Vercel</li>
                         </ul>
                     </div>
                     <div class="skill-group glass reveal" style="--d:.24s">

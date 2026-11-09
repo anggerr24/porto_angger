@@ -1192,3 +1192,59 @@ a.detail-media:hover img { transform: scale(1.04); }
     .tl-item::before { left: -28px; }
     .timeline::before, .timeline-fill { left: 7px; }
 }
+
+/* Tooltip keahlian: "dipakai di" */
+.chips li[data-tip] { position: relative; cursor: help; }
+.skill-tip {
+    position: fixed; left: 0; top: 0; z-index: 200;
+    max-width: 230px; padding: 8px 11px; border-radius: 9px;
+    background: var(--bg-2); color: var(--text);
+    border: 1px solid var(--accent);
+    font: 500 0.74rem/1.45 var(--font-mono);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    opacity: 0; pointer-events: none;
+    transform: translateY(6px);
+    transition: opacity .2s, transform .25s var(--ease);
+}
+.skill-tip.show { opacity: 1; transform: none; }
+.skill-tip small { display: block; color: var(--accent); font-size: .66rem; letter-spacing: .04em; margin-bottom: 2px; }
+.chips li[data-tip]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.chips li[data-tip]::before { content: ""; position: absolute; right: 5px; top: 5px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: .6; }
+
+/* Intro singkat saat pertama dibuka */
+.intro { display: none; }
+.js .intro {
+    position: fixed; inset: 0; z-index: 9999;
+    display: grid; place-items: center;
+    background: var(--bg);
+    transition: opacity .6s var(--ease), visibility .6s;
+}
+.intro.done { opacity: 0; visibility: hidden; }
+.intro-box { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.intro-logo {
+    font-size: 2.4rem; font-weight: 600; color: var(--accent);
+    animation: introPop .7s var(--ease) both;
+}
+.intro-name {
+    font-family: var(--font-display); font-size: 1.15rem; letter-spacing: .06em; color: var(--text);
+    animation: introUp .7s .15s var(--ease) both;
+}
+.intro-bar { width: 160px; height: 2px; border-radius: 2px; background: var(--line); overflow: hidden; }
+.intro-bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); animation: introBar 1s .1s var(--ease) both; }
+.intro.done .intro-box { transform: scale(.96); transition: transform .6s var(--ease); }
+@keyframes introPop { from { opacity: 0; transform: scale(.6) rotate(-8deg); } to { opacity: 1; transform: none; } }
+@keyframes introUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes introBar { from { transform: translateX(-100%); } to { transform: none; } }
+
+/* Badge Open to work: hijau, bisa diklik ke kontak */
+a.status { text-decoration: none; transition: border-color .25s, color .25s, transform .3s var(--ease); }
+a.status:hover { border-color: #5fd68a; color: var(--text); transform: translateY(-2px); }
+.status .dot, .status .dot::after { background-color: #5fd68a; border-color: #5fd68a; }
+.status .dot::after { background: none; }
+.status .dot { box-shadow: 0 0 10px #5fd68a; animation: blink 1.6s ease-in-out infinite; }
+@keyframes blink { 50% { opacity: .45; } }
+.status-sep { opacity: .5; }
+.status-arrow { font-size: .7rem; opacity: 0; width: 0; transform: translateX(-4px); transition: opacity .25s, width .25s, transform .25s; }
+a.status:hover .status-arrow { opacity: 1; width: .8em; transform: none; }
+@media (prefers-reduced-motion: reduce) { .status .dot { animation: none; } }
