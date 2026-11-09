@@ -659,10 +659,10 @@ body::before {
 .filter.active { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
 .filter .count { margin-left: 6px; opacity: 0.6; }
 
-.projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.projects { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; }
+.project { flex: 0 1 calc((100% - 36px) / 3); min-width: 0; }
 .project { display: flex; flex-direction: column; transform-style: preserve-3d; will-change: transform; }
 .project.hidden { display: none; }
-.project.wide { grid-column: span 2; }
 
 /* Bingkai browser */
 .browser { position: relative; display: block; border-bottom: 1px solid var(--line); background: var(--bg-2); }
@@ -1106,8 +1106,7 @@ a.detail-media:hover img { transform: scale(1.04); }
 
 /* ---------- Responsif ---------- */
 @media (max-width: 1040px) {
-    .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .project.wide { grid-column: span 2; }
+    .project { flex-basis: calc((100% - 18px) / 2); }
     .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .certs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -1146,10 +1145,10 @@ a.detail-media:hover img { transform: scale(1.04); }
 }
 
 @media (max-width: 640px) {
-    .projects, .skills, .certs, .focus-grid, .cert-gallery { grid-template-columns: minmax(0, 1fr); }
+    .skills, .certs, .focus-grid, .cert-gallery { grid-template-columns: minmax(0, 1fr); }
+    .project { flex-basis: 100%; }
     .lightbox[open] { grid-template-columns: minmax(0, 1fr); }
     .lb-prev, .lb-next { display: none; }
-    .project.wide { grid-column: auto; }
     .hero-actions .btn { flex: 1 1 auto; justify-content: center; }
     .timeline { padding-left: 28px; }
     .tl-item::before { left: -28px; }

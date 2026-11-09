@@ -224,13 +224,11 @@
             projects.forEach(function (p) {
                 var match = f === 'all' || p.dataset.category.split(' ').indexOf(f) !== -1;
                 p.classList.toggle('hidden', !match);
-                p.classList.toggle('wide', match && f === 'all' && p.dataset.wide !== undefined);
                 if (match) p.classList.add('in');
             });
             setupShots();
         });
     });
-    projects.forEach(function (p) { if (p.classList.contains('wide')) p.dataset.wide = ''; });
 
     /* ---------- Preview web: auto-scroll saat hover ---------- */
     function setupShots() {
