@@ -662,6 +662,7 @@ body::before {
 .projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .project { display: flex; flex-direction: column; transform-style: preserve-3d; will-change: transform; }
 .project.hidden { display: none; }
+.project.wide { grid-column: span 2; }
 
 /* Bingkai browser */
 .browser { position: relative; display: block; border-bottom: 1px solid var(--line); background: var(--bg-2); }
