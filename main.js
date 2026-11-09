@@ -95,9 +95,10 @@
             var mid = window.innerHeight * 0.6;
             var fill = Math.min(1, Math.max(0, (mid - r.top) / r.height));
             timeline.style.setProperty('--fill', fill.toFixed(3));
-            tlItems.forEach(function (it) {
-                it.classList.toggle('lit', it.getBoundingClientRect().top + 30 < mid);
-            });
+            /* baca semua posisi dulu, baru ubah class (hindari layout berulang) */
+            var tops = tlItems.map ? tlItems.map(function (it) { return it.getBoundingClientRect().top; })
+                : Array.prototype.map.call(tlItems, function (it) { return it.getBoundingClientRect().top; });
+            Array.prototype.forEach.call(tlItems, function (it, i) { it.classList.toggle('lit', tops[i] + 30 < mid); });
         }
         ticking = false;
     }
@@ -306,7 +307,11 @@
         });
     }
     setupShots();
-    window.addEventListener('resize', setupShots);
+    var shotsW = window.innerWidth;
+    window.addEventListener('resize', function () {
+        if (window.innerWidth === shotsW) return;
+        shotsW = window.innerWidth; setupShots();
+    });
 
     /* Di layar sentuh tidak ada hover: preview discroll otomatis saat kartunya terlihat */
     if (!finePointer && !reduced && 'IntersectionObserver' in window) {
@@ -452,6 +457,14 @@
     /* ---------- Tahun footer ---------- */
     document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
+    /* ---------- Jeda animasi berulang saat tidak terlihat ---------- */
+    if ('IntersectionObserver' in window) {
+        var pauseIO = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) { en.target.classList.toggle('paused', !en.isIntersecting); });
+        }, { rootMargin: '100px 0px' });
+        document.querySelectorAll('.hero, .marquee, .viz, .contact-card, .browser-bar').forEach(function (el) { pauseIO.observe(el); });
+    }
+
     /* ---------- Jaringan partikel di hero ---------- */
     var net = null;
     var canvas = document.getElementById('net');
@@ -475,7 +488,7 @@
                 w = r.width; h = r.height;
                 canvas.width = w * dpr; canvas.height = h * dpr;
                 ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-                var count = Math.round(Math.min(90, (w * h) / 16000));
+                var count = Math.round(Math.min(w < 700 ? 34 : 90, (w * h) / (w < 700 ? 22000 : 16000)));
                 pts = [];
                 for (var i = 0; i < count; i++) {
                     pts.push({
@@ -521,7 +534,11 @@
                 mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
             });
             canvas.parentElement.addEventListener('pointerleave', function () { mouse.x = mouse.y = -9999; });
-            window.addEventListener('resize', resize);
+            var lastW = window.innerWidth;
+            window.addEventListener('resize', function () {
+                if (window.innerWidth === lastW) return; /* address bar HP: tinggi saja yang berubah */
+                lastW = window.innerWidth; resize();
+            });
 
             // Hemat CPU: berhenti saat hero tidak terlihat atau tab disembunyikan
             if ('IntersectionObserver' in window) {

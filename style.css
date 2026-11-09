@@ -6,7 +6,7 @@
 :root {
     --bg: #091214;
     --bg-2: #0d191c;
-    --card: rgba(17, 31, 35, 0.72);
+    --card: rgba(17, 31, 35, 0.86);
     --card-solid: #11201f;
     --line: rgba(150, 200, 192, 0.12);
     --line-strong: rgba(150, 200, 192, 0.24);
@@ -37,7 +37,7 @@
 :root[data-theme="light"] {
     --bg: #edf3f1;
     --bg-2: #e3ecea;
-    --card: rgba(255, 255, 255, 0.72);
+    --card: rgba(255, 255, 255, 0.86);
     --card-solid: #ffffff;
     --line: rgba(20, 70, 64, 0.12);
     --line-strong: rgba(20, 70, 64, 0.22);
@@ -287,7 +287,6 @@ body::before {
     border-radius: 999px;
     background: var(--card);
     color: var(--text-2);
-    backdrop-filter: blur(8px);
 }
 .status .dot {
     position: relative;
@@ -398,8 +397,6 @@ body::before {
     border-radius: 12px;
     border: 1px solid var(--line-strong);
     background: var(--card);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     font-family: var(--font-mono);
     font-size: 0.78rem;
     color: var(--text);
@@ -425,8 +422,6 @@ body::before {
     border: 1px solid var(--line);
     border-radius: var(--radius);
     background: var(--card);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
 }
 .fact-num {
     display: block;
@@ -514,8 +509,6 @@ body::before {
     border: 1px solid var(--line);
     border-radius: var(--radius);
     background: var(--card);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     overflow: hidden;
     transition: border-color 0.3s, transform 0.5s var(--ease), box-shadow 0.4s;
 }
@@ -661,7 +654,8 @@ body::before {
 
 .projects { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; }
 .project { flex: 0 1 calc((100% - 36px) / 3); min-width: 0; }
-.project { display: flex; flex-direction: column; transform-style: preserve-3d; will-change: transform; }
+.project { display: flex; flex-direction: column; transform-style: preserve-3d; }
+.project:hover { will-change: transform; }
 .project.hidden { display: none; }
 
 /* Bingkai browser */
@@ -1042,7 +1036,6 @@ button.browser .shot { display: block; }
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     background: var(--card);
-    backdrop-filter: blur(10px);
     transition: border-color 0.3s;
 }
 .detail:hover { border-color: var(--line-strong); }
@@ -1103,7 +1096,6 @@ a.detail-media:hover img { transform: scale(1.04); }
     width: 44px; height: 44px; margin-top: -22px;
     border-radius: 12px;
     background: var(--card);
-    backdrop-filter: blur(8px);
     color: var(--text);
     border: 1px solid var(--line-strong);
     font-size: 1.5rem; line-height: 1;
@@ -1126,12 +1118,11 @@ a.detail-media:hover img { transform: scale(1.04); }
 /* ---------- Animasi masuk ---------- */
 .js .reveal {
     opacity: 0;
-    transform: translateY(28px);
-    filter: blur(6px);
-    transition: opacity 0.9s var(--ease), transform 0.9s var(--ease), filter 0.9s var(--ease);
+    transform: translateY(24px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
     transition-delay: var(--d, 0s);
 }
-.js .reveal.in { opacity: 1; transform: none; filter: none; }
+.js .reveal.in { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -1294,4 +1285,13 @@ a.status:hover .status-arrow { opacity: 1; width: .8em; transform: none; }
 
     /* Halaman detail: kotak ikon tidak perlu setinggi gambar */
     .detail-media.icon { aspect-ratio: 16 / 7; min-height: 0; }
+}
+
+/* ===== Performa scroll ===== */
+/* Animasi berulang dijeda saat elemennya di luar layar */
+.paused, .paused *, .paused::before, .paused::after { animation-play-state: paused !important; }
+@media (hover: none), (max-width: 860px) {
+    .aurora span { animation: none; filter: blur(60px); }
+    .chip-float { animation: none; }
+    .orbit { animation: none; }
 }
