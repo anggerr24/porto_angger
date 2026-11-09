@@ -308,6 +308,17 @@
     setupShots();
     window.addEventListener('resize', setupShots);
 
+    /* Di layar sentuh tidak ada hover: preview discroll otomatis saat kartunya terlihat */
+    if (!finePointer && !reduced && 'IntersectionObserver' in window) {
+        var shotIO = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) { en.target.classList.toggle('autoscroll', en.isIntersecting); });
+        }, { threshold: 0.75 });
+        document.querySelectorAll('.shot').forEach(function (shot) {
+            if (shot.hasAttribute('data-hint')) shot.setAttribute('data-hint', 'auto scroll ↓');
+            shotIO.observe(shot);
+        });
+    }
+
     /* ---------- Spotlight + tilt pada kartu ---------- */
     if (finePointer && !reduced) {
         document.querySelectorAll('.glass').forEach(function (card) {
