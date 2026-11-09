@@ -827,6 +827,110 @@ body::before {
 .cert p { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.86rem; }
 .cert p::before { content: '◆'; color: var(--accent-2); font-size: 0.6rem; }
 
+/* Galeri sertifikat bergambar */
+.cert-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 18px;
+}
+.cert-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    cursor: zoom-in;
+}
+.cert-frame {
+    position: relative;
+    display: block;
+    margin: 14px 14px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--bg-2);
+    aspect-ratio: 1.414 / 1;
+}
+.cert-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease), filter 0.5s;
+}
+.cert-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.28) 50%, transparent 65%);
+    transform: translateX(-110%);
+    transition: transform 1s var(--ease);
+    pointer-events: none;
+}
+.cert-card:hover .cert-frame img { transform: scale(1.04); }
+.cert-card:hover .cert-frame::after { transform: translateX(110%); }
+.cert-zoom {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(6, 20, 20, 0.72);
+    color: #cfe9e4;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s, transform 0.4s var(--ease);
+}
+.cert-card:hover .cert-zoom, .cert-card:focus-visible .cert-zoom { opacity: 1; transform: none; }
+.cert-info { display: flex; flex-direction: column; gap: 6px; padding: 16px 20px 20px; }
+.cert-info .mono { color: var(--accent); }
+.cert-title { font-family: var(--font-display); font-size: 1.08rem; font-weight: 600; line-height: 1.35; color: var(--text); }
+
+.certs { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.cert-badge {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(127, 209, 193, 0.16), rgba(159, 178, 255, 0.16));
+    color: var(--accent);
+    font-size: 1.05rem;
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    padding: clamp(16px, 4vw, 48px);
+    border: 0;
+    background: transparent;
+    color: var(--text);
+}
+.lightbox[open] { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 14px; }
+.lightbox::backdrop { background: rgba(4, 10, 11, 0.86); backdrop-filter: blur(6px); }
+.lightbox figure { display: grid; justify-items: center; gap: 14px; min-width: 0; }
+.lb-img {
+    max-width: 100%;
+    max-height: calc(100vh - 140px);
+    max-height: calc(100svh - 140px);
+    border-radius: 12px;
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.8);
+    animation: lbIn 0.45s var(--ease);
+}
+@keyframes lbIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: none; } }
+.lb-cap { color: #cfe0dc; text-align: center; }
+.lb-close { position: absolute; top: 16px; right: 16px; }
+.lightbox .icon-btn { background: rgba(17, 31, 35, 0.8); color: #e2ece9; border-color: rgba(150, 200, 192, 0.24); }
+
 /* ---------- Kontak ---------- */
 .contact { position: relative; padding: clamp(80px, 12vw, 150px) 0; overflow: hidden; isolation: isolate; }
 .contact-card { padding: clamp(32px, 6vw, 72px); text-align: center; }
@@ -1041,7 +1145,9 @@ a.detail-media:hover img { transform: scale(1.04); }
 }
 
 @media (max-width: 640px) {
-    .projects, .skills, .certs, .focus-grid { grid-template-columns: minmax(0, 1fr); }
+    .projects, .skills, .certs, .focus-grid, .cert-gallery { grid-template-columns: minmax(0, 1fr); }
+    .lightbox[open] { grid-template-columns: minmax(0, 1fr); }
+    .lb-prev, .lb-next { display: none; }
     .project.wide { grid-column: auto; }
     .hero-actions .btn { flex: 1 1 auto; justify-content: center; }
     .timeline { padding-left: 28px; }

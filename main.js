@@ -313,6 +313,51 @@
         });
     });
 
+    /* ---------- Lightbox sertifikat ---------- */
+    var lb = document.querySelector('.lightbox');
+    var certCards = Array.prototype.slice.call(document.querySelectorAll('.cert-card[data-full]'));
+    if (lb && certCards.length && typeof lb.showModal === 'function') {
+        var lbImg = lb.querySelector('.lb-img');
+        var lbCap = lb.querySelector('.lb-cap');
+        var lbIndex = 0;
+        var lastFocus = null;
+        function show(i) {
+            lbIndex = (i + certCards.length) % certCards.length;
+            var c = certCards[lbIndex];
+            lbImg.style.animation = 'none';
+            void lbImg.offsetWidth;
+            lbImg.style.animation = '';
+            lbImg.src = c.dataset.full;
+            lbImg.alt = c.querySelector('img').alt;
+            lbCap.textContent = c.dataset.caption;
+        }
+        certCards.forEach(function (c, i) {
+            c.addEventListener('click', function () {
+                lastFocus = c;
+                show(i);
+                lb.showModal();
+            });
+        });
+        lb.querySelector('.lb-close').addEventListener('click', function () { lb.close(); });
+        lb.querySelector('.lb-prev').addEventListener('click', function () { show(lbIndex - 1); });
+        lb.querySelector('.lb-next').addEventListener('click', function () { show(lbIndex + 1); });
+        lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+        lb.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowLeft') show(lbIndex - 1);
+            if (e.key === 'ArrowRight') show(lbIndex + 1);
+        });
+        lb.addEventListener('close', function () { if (lastFocus) lastFocus.focus(); });
+        // geser di HP
+        var sx = null;
+        lb.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+        lb.addEventListener('touchend', function (e) {
+            if (sx === null) return;
+            var dx = e.changedTouches[0].clientX - sx;
+            if (Math.abs(dx) > 50) show(lbIndex + (dx < 0 ? 1 : -1));
+            sx = null;
+        });
+    }
+
     /* ---------- Tahun footer ---------- */
     document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
