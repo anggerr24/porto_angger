@@ -244,6 +244,7 @@
         termEl.textContent = '';
         if (reduced) {
             parts.forEach(function (p) { addSpan(p[0], p[1]); });
+            addSpan('cur', '');
             return;
         }
         var pi = 0, ch = 0, span = null;
@@ -255,12 +256,19 @@
             return s;
         }
         (function step() {
-            if (pi >= parts.length) { addSpan('k', '▋').style.animation = 'blink 1s steps(1) infinite'; return; }
+            if (pi >= parts.length) { addSpan('cur', ''); return; }
             var p = parts[pi];
+            if (p[0] !== 'c') {
+                /* output: muncul per potongan, jeda kecil tiap baris baru */
+                addSpan(p[0], p[1]); pi++;
+                setTimeout(step, p[1].indexOf(String.fromCharCode(10)) > -1 ? 90 : 0);
+                return;
+            }
+            /* perintah: diketik huruf per huruf */
             if (!span) span = addSpan(p[0], '');
             span.textContent += p[1].charAt(ch++);
-            if (ch >= p[1].length) { pi++; ch = 0; span = null; }
-            setTimeout(step, p[0] === 's' ? 18 : 30);
+            if (ch >= p[1].length) { pi++; ch = 0; span = null; setTimeout(step, 260); return; }
+            setTimeout(step, 55);
         })();
     }
     if (termEl && (reduced || !('IntersectionObserver' in window))) typeTerminal();

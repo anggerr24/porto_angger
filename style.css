@@ -1233,8 +1233,8 @@ a.status { text-decoration: none; transition: border-color .25s, color .25s, tra
 a.status:hover { border-color: #5fd68a; color: var(--text); transform: translateY(-2px); }
 .status .dot, .status .dot::after { background-color: #5fd68a; border-color: #5fd68a; }
 .status .dot::after { background: none; }
-.status .dot { box-shadow: 0 0 10px #5fd68a; animation: blink 1.6s ease-in-out infinite; }
-@keyframes blink { 50% { opacity: .45; } }
+.status .dot { box-shadow: 0 0 10px #5fd68a; animation: dotBlink 1.6s ease-in-out infinite; }
+@keyframes dotBlink { 50% { opacity: .45; } }
 .status-sep { opacity: .5; }
 .status-arrow { font-size: .7rem; opacity: 0; width: 0; transform: translateX(-4px); transition: opacity .25s, width .25s, transform .25s; }
 a.status:hover .status-arrow { opacity: 1; width: .8em; transform: none; }
@@ -1295,3 +1295,37 @@ a.status:hover .status-arrow { opacity: 1; width: .8em; transform: none; }
     .chip-float { animation: none; }
     .orbit { animation: none; }
 }
+
+/* ===== Terminal: selalu gelap seperti terminal sungguhan (juga di mode terang) ===== */
+.terminal.glass {
+    --t-bg: #0b1517; --t-bar: #0f1d20; --t-line: rgba(127, 209, 193, 0.14);
+    background: var(--t-bg);
+    border-color: var(--t-line);
+    box-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.6);
+    color-scheme: dark;
+}
+.terminal .terminal-bar { background: var(--t-bar); border-bottom-color: var(--t-line); color: #7d9692; }
+.terminal .terminal-bar span { flex: 1; text-align: center; margin: 0 0 0 -52px; color: #8aa39f; }
+.terminal .terminal-bar em { font-style: normal; font-size: 0.7rem; padding: 2px 8px; border-radius: 6px; background: rgba(127, 209, 193, 0.1); color: #7fd1c1; }
+.terminal .terminal-body {
+    position: relative;
+    min-height: 262px; line-height: 1.65;
+    color: #c9d7d4;
+    background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 3px),
+        radial-gradient(120% 80% at 0% 0%, rgba(127, 209, 193, 0.07), transparent 60%);
+}
+.terminal-body .p { color: #9fb2ff; }
+.terminal-body .c { color: #e6efed; }
+.terminal-body .b { color: #6f8a86; }
+.terminal-body .k { color: #7fd1c1; }
+.terminal-body .s { color: #e8cfa9; }
+.terminal-body .n { color: #f0a6c8; }
+.terminal-body .t { color: #9fe39a; }
+.terminal-body .cur { display: inline-block; width: 0.6em; height: 1.1em; vertical-align: -0.18em; background: #7fd1c1; animation: blink 1s steps(1) infinite; }
+@media (max-width: 640px) {
+    .terminal { font-size: 0.76rem; }
+    .terminal .terminal-body { padding: 14px 14px 16px; min-height: 236px; }
+    .terminal .terminal-bar span { margin-left: -40px; }
+}
+.edu-grid.single { grid-template-columns: minmax(0, 1fr); }
