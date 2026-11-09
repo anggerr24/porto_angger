@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data & AI — Angger Rizky Rambudia</title>
     <meta name="description" content="Proyek data dan AI Angger Rizky Rambudia: Market Basket Analysis, dataset Banding Parfum, dan IoT Deteksi Umur.">
-    <meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#12110e" media="(prefers-color-scheme: dark)">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317150f'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23ff6b3d'%3EA%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#091214">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23091214'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='30' fill='%237fd1c1'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
     <script>
         (function () {
             document.documentElement.classList.add('js');
@@ -19,16 +18,18 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a href="#main" class="skip-link">Langsung ke konten</a>
+    <div class="progress" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
     <header class="site-header">
         <nav class="wrap nav" aria-label="Navigasi utama">
-            <a href="index.html" class="brand">Angger<em>.</em></a>
+            <a href="index.html" class="brand" aria-label="Angger, ke beranda"><b>&lt;</b>angger<b>/&gt;</b><span class="caret"></span></a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="project_web_development.html">Web Development</a></li>
                 <li><a href="project_data_analysis.html" class="active" aria-current="page">Data &amp; AI</a></li>
@@ -37,7 +38,7 @@
             </ul>
             <div class="nav-tools">
                 <button type="button" class="icon-btn theme-toggle" aria-label="Ganti tema terang/gelap">
-                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                    <i class="fas fa-sun"></i><i class="fas fa-moon"></i>
                 </button>
                 <button type="button" class="icon-btn nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
                     <i class="fas fa-bars"></i>
@@ -48,6 +49,7 @@
 
     <main id="main">
         <section class="page-hero">
+            <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
             <div class="wrap">
                 <a class="back mono" href="index.html#projects"><i class="fas fa-arrow-left"></i> Semua proyek</a>
                 <h1>Data <em>&amp; AI</em></h1>
@@ -76,7 +78,7 @@
                     </article>
 
                     <article class="detail reveal">
-                        <a class="detail-media" href="https://parfum-compare.vercel.app" target="_blank" rel="noopener"><img src="proj_parfum.jpg" alt="Halaman depan Banding Parfum" loading="lazy"></a>
+                        <a class="detail-media" href="https://parfum-compare.vercel.app" target="_blank" rel="noopener"><img src="prev_parfum.jpg" alt="Halaman depan Banding Parfum" loading="lazy"></a>
                         <div class="detail-body">
                             <span class="mono">Data Pipeline &amp; Scoring</span>
                             <h3>Banding Parfum — Dataset &amp; Skor Value</h3>
@@ -123,11 +125,11 @@
                 </div>
 
                 <h2 class="subhead reveal">Sertifikasi Terkait</h2>
-                <ul class="certs reveal">
-                    <li class="cert"><span class="mono">Feb 2026</span><h3>Data Visualization with Tableau &amp; Data Wrangling with Python</h3><p>Pacmann</p></li>
-                    <li class="cert"><span class="mono">Feb 2026</span><h3>Excel Hacks for Business Professional</h3><p>Pacmann</p></li>
-                    <li class="cert"><span class="mono">Des 2024</span><h3>Introduction to Cloud and AI Applications for Digital Business</h3><p>Digital Talent Scholarship</p></li>
-                    <li class="cert"><span class="mono">Feb 2023</span><h3>Fundamental DBMS</h3><p>Universitas Gunadarma</p></li>
+                <ul class="certs">
+                    <li class="cert reveal"><span class="mono">Feb 2026</span><h3>Data Visualization with Tableau &amp; Data Wrangling with Python</h3><p>Pacmann</p></li>
+                    <li class="cert reveal"><span class="mono">Feb 2026</span><h3>Excel Hacks for Business Professional</h3><p>Pacmann</p></li>
+                    <li class="cert reveal"><span class="mono">Des 2024</span><h3>Introduction to Cloud and AI Applications for Digital Business</h3><p>Digital Talent Scholarship</p></li>
+                    <li class="cert reveal"><span class="mono">Feb 2023</span><h3>Fundamental DBMS</h3><p>Universitas Gunadarma</p></li>
                 </ul>
 
                 <div class="page-back"><a href="index.html#projects" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Kembali ke beranda</a></div>

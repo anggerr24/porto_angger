@@ -9,9 +9,8 @@
     <meta property="og:description" content="Lulusan Sistem Informasi Universitas Gunadarma. Web development, analisis data, dan analisis sistem.">
     <meta property="og:image" content="https://porto-angger.vercel.app/fotoprofil.jpeg">
     <meta property="og:url" content="https://porto-angger.vercel.app/">
-    <meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#12110e" media="(prefers-color-scheme: dark)">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317150f'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23ff6b3d'%3EA%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#091214">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23091214'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='30' fill='%237fd1c1'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
     <script>
         (function () {
             document.documentElement.classList.add('js');
@@ -23,16 +22,18 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a href="#main" class="skip-link">Langsung ke konten</a>
+    <div class="progress" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
     <header class="site-header">
         <nav class="wrap nav" aria-label="Navigasi utama">
-            <a href="#home" class="brand">Angger<em>.</em></a>
+            <a href="#home" class="brand" aria-label="Angger, ke atas"><b>&lt;</b>angger<b>/&gt;</b><span class="caret"></span></a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#about">Tentang</a></li>
                 <li><a href="#experience">Pengalaman</a></li>
@@ -43,7 +44,7 @@
             </ul>
             <div class="nav-tools">
                 <button type="button" class="icon-btn theme-toggle" aria-label="Ganti tema terang/gelap">
-                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                    <i class="fas fa-sun"></i><i class="fas fa-moon"></i>
                 </button>
                 <button type="button" class="icon-btn nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
                     <i class="fas fa-bars"></i>
@@ -55,26 +56,26 @@
     <main id="main">
         <!-- Hero -->
         <section class="hero" id="home">
+            <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+            <canvas id="net" aria-hidden="true"></canvas>
             <div class="wrap">
                 <div class="hero-grid">
                     <div>
                         <span class="status mono"><span class="dot"></span> Open to work · Jakarta</span>
-                        <h1>Angger Rizky <em>Rambudia</em></h1>
+                        <span class="hero-hello mono">// halo, saya</span>
+                        <h1><span class="gradient-text">Angger Rizky Rambudia</span></h1>
+                        <p class="hero-role" aria-label="Programmer, System Analyst, Data Analyst">
+                            <span class="prompt">&gt;</span> <span id="typing">Programmer</span><span class="cursor" aria-hidden="true"></span>
+                        </p>
                         <p class="hero-lead">
-                            <strong>Programmer &amp; System Analyst</strong>, lulusan Sistem Informasi Universitas Gunadarma.
-                            Saya membangun aplikasi web, mengolah data jadi insight, dan menerjemahkan kebutuhan bisnis
-                            menjadi sistem yang jalan.
+                            Lulusan <strong>Sistem Informasi Universitas Gunadarma</strong>, sekarang
+                            <strong>Programmer &amp; System Analyst di Anara Trisakti Medika</strong>.
+                            Saya membangun aplikasi web, mengolah data jadi insight, dan menerjemahkan kebutuhan bisnis menjadi sistem yang jalan.
                         </p>
                         <div class="hero-actions">
-                            <a href="#projects" class="btn">Lihat proyek <i class="fas fa-arrow-down"></i></a>
-                            <a href="#contact" class="btn btn-ghost">Hubungi saya</a>
+                            <a href="#projects" class="btn magnetic">Lihat proyek <i class="fas fa-arrow-down"></i></a>
+                            <a href="#contact" class="btn btn-ghost magnetic">Hubungi saya</a>
                         </div>
-                    </div>
-                    <div class="hero-side">
-                        <figure class="portrait">
-                            <img src="fotoprofil.jpeg" alt="Foto Angger Rizky Rambudia" width="540" height="720">
-                            <figcaption class="mono"><span>S.Kom · IPK 3,76</span><span>2026</span></figcaption>
-                        </figure>
                         <div class="socials">
                             <a class="icon-btn" href="https://www.linkedin.com/in/angger-rizky-rambudia-972556255/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             <a class="icon-btn" href="https://github.com/anggerr24" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -82,36 +83,81 @@
                             <a class="icon-btn" href="mailto:angger2434@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
+
+                    <div class="hero-visual" aria-hidden="false">
+                        <div class="orbit" aria-hidden="true"></div>
+                        <div class="ring" aria-hidden="true"></div>
+                        <div class="photo"><img src="fotoprofil.jpeg" alt="Foto Angger Rizky Rambudia" width="540" height="720"></div>
+                        <span class="chip-float c1" aria-hidden="true"><i class="fab fa-python"></i> python</span>
+                        <span class="chip-float c2" aria-hidden="true"><i class="fab fa-php"></i> php</span>
+                        <span class="chip-float c3" aria-hidden="true"><i class="fas fa-database"></i> sql</span>
+                        <span class="chip-float c4" aria-hidden="true"><i class="fab fa-js"></i> javascript</span>
+                    </div>
                 </div>
 
                 <div class="facts">
-                    <div class="fact"><span class="fact-num">3,76</span><span class="fact-label">IPK dari 4,00</span></div>
-                    <div class="fact"><span class="fact-num">4</span><span class="fact-label">Pengalaman kerja &amp; magang</span></div>
-                    <div class="fact"><span class="fact-num">7</span><span class="fact-label">Proyek</span></div>
-                    <div class="fact"><span class="fact-num">9</span><span class="fact-label">Sertifikasi</span></div>
+                    <div class="fact reveal"><span class="fact-num" data-count="3.76" data-decimals="2">3,76</span><span class="fact-label">IPK dari 4,00</span></div>
+                    <div class="fact reveal" style="--d:.08s"><span class="fact-num" data-count="4">4</span><span class="fact-label">Pengalaman kerja &amp; magang</span></div>
+                    <div class="fact reveal" style="--d:.16s"><span class="fact-num" data-count="9">9</span><span class="fact-label">Proyek</span></div>
+                    <div class="fact reveal" style="--d:.24s"><span class="fact-num" data-count="9">9</span><span class="fact-label">Sertifikasi</span></div>
                 </div>
             </div>
+            <span class="scroll-hint" aria-hidden="true"></span>
         </section>
+
+        <!-- Marquee tech stack -->
+        <div class="marquee" aria-label="Teknologi yang saya pakai">
+            <div class="marquee-track">
+                <span><i class="fab fa-python"></i> Python</span>
+                <span><i class="fab fa-php"></i> PHP</span>
+                <span><i class="fab fa-js"></i> JavaScript</span>
+                <span><i class="fab fa-html5"></i> HTML &amp; CSS</span>
+                <span><i class="fas fa-database"></i> MySQL · SQLite</span>
+                <span><i class="fas fa-table"></i> Pandas</span>
+                <span><i class="fas fa-chart-column"></i> Power BI</span>
+                <span><i class="fas fa-chart-area"></i> Tableau</span>
+                <span><i class="fas fa-eye"></i> YOLOv8 · OpenCV</span>
+                <span><i class="fas fa-flask"></i> Flask</span>
+                <span><i class="fas fa-microchip"></i> ESP32</span>
+                <span><i class="fab fa-git-alt"></i> Git &amp; GitHub</span>
+                <span><i class="fas fa-cloud"></i> Vercel</span>
+                <span><i class="fas fa-network-wired"></i> Cisco Networking</span>
+                <!-- duplikat otomatis oleh main.js untuk loop mulus -->
+            </div>
+        </div>
 
         <!-- Tentang -->
         <section id="about" class="section">
             <div class="wrap">
                 <div class="section-head reveal">
-                    <span class="eyebrow mono">01 — Tentang</span>
-                    <h2>Dari data mentah<br>sampai <em>sistem jadi.</em></h2>
+                    <span class="eyebrow mono">01 · tentang</span>
+                    <h2 data-scramble>Dari data mentah sampai <span class="hl">sistem jadi.</span></h2>
                     <p>Saya terbuka untuk peran Programmer, System Analyst, Data Analyst, IT Support, maupun Technical Writer.</p>
                 </div>
                 <div class="about">
-                    <div class="about-text reveal">
-                        <p>Saya Angger, Sarjana Komputer dari Program Studi <strong>Sistem Informasi Universitas Gunadarma</strong> (2022–2026). Di kampus saya belajar pemrograman, basis data, analisis sistem, dan analisis data. Skripsi saya membahas <strong>Market Basket Analysis dengan algoritma Apriori</strong> untuk menyusun rekomendasi bundling menu dari data transaksi.</p>
-                        <p>Selama kuliah saya magang sebagai IT Intern di Kementerian Perhubungan RI dan Social Media Specialist di Rutee. Sekarang saya menjadi <strong>Programmer &amp; System Analyst di Anara Trisakti Medika</strong>.</p>
-                        <p>Di luar kerjaan, saya suka bikin alat kecil yang menjawab pertanyaan sehari-hari. Contohnya Banding Parfum: data harga dan rating dari beberapa sumber saya kumpulkan, lalu saya olah jadi skor yang gampang dibandingkan.</p>
+                    <div class="reveal">
+                        <div class="about-text">
+                            <p>Saya Angger, Sarjana Komputer dari Program Studi <strong>Sistem Informasi Universitas Gunadarma</strong> (2022–2026). Di kampus saya belajar pemrograman, basis data, analisis sistem, dan analisis data. Skripsi saya membahas <strong>Market Basket Analysis dengan algoritma Apriori</strong> untuk menyusun rekomendasi bundling menu dari data transaksi.</p>
+                            <p>Selama kuliah saya magang sebagai IT Intern di Kementerian Perhubungan RI dan Social Media Specialist di Rutee. Di luar kerjaan, saya suka bikin alat kecil yang menjawab pertanyaan sehari-hari, seperti Banding Parfum.</p>
+                        </div>
+                        <div class="terminal glass" aria-label="Ringkasan profil">
+                            <div class="terminal-bar"><i></i><i></i><i></i><span>angger@porto: ~</span></div>
+                            <div class="terminal-body" id="term" data-lines='[
+                                ["p","$ "],["","whoami\n"],["k","nama"],["",":    "],["s","Angger Rizky Rambudia\n"],
+                                ["k","peran"],["",":   "],["s","Programmer & System Analyst\n"],
+                                ["k","kampus"],["",":  "],["s","Universitas Gunadarma (S.Kom)\n"],
+                                ["k","ipk"],["",":     "],["s","3.76 / 4.00\n"],
+                                ["k","lokasi"],["",":  "],["s","Jakarta, Indonesia\n"],
+                                ["k","status"],["",":  "],["s","open to work ✓\n"],
+                                ["p","$ "]
+                            ]'></div>
+                        </div>
                     </div>
-                    <div class="focus-list reveal">
-                        <div class="focus-item"><i class="fas fa-code"></i><h3>Web Development</h3><p>Aplikasi web dengan PHP, JavaScript, dan MySQL/SQLite.</p></div>
-                        <div class="focus-item"><i class="fas fa-chart-pie"></i><h3>Data Analysis</h3><p>Python (Pandas), Power BI, Tableau, dan Excel.</p></div>
-                        <div class="focus-item"><i class="fas fa-sitemap"></i><h3>System Analysis</h3><p>Analisis kebutuhan, perancangan, dan dokumentasi sistem.</p></div>
-                        <div class="focus-item"><i class="fas fa-hashtag"></i><h3>Social Media</h3><p>Konten, kalender posting, dan analisis performa.</p></div>
+                    <div class="focus-grid">
+                        <div class="focus glass reveal"><i class="fas fa-code"></i><h3>Web Development</h3><p>Aplikasi web dengan PHP, JavaScript, dan MySQL/SQLite.</p></div>
+                        <div class="focus glass reveal" style="--d:.08s"><i class="fas fa-chart-pie"></i><h3>Data Analysis</h3><p>Python (Pandas), Power BI, Tableau, dan Excel.</p></div>
+                        <div class="focus glass reveal" style="--d:.16s"><i class="fas fa-sitemap"></i><h3>System Analysis</h3><p>Analisis kebutuhan, perancangan, dan dokumentasi sistem.</p></div>
+                        <div class="focus glass reveal" style="--d:.24s"><i class="fas fa-hashtag"></i><h3>Social Media</h3><p>Konten, kalender posting, dan analisis performa.</p></div>
                     </div>
                 </div>
             </div>
@@ -121,24 +167,26 @@
         <section id="experience" class="section">
             <div class="wrap">
                 <div class="section-head reveal">
-                    <span class="eyebrow mono">02 — Pengalaman</span>
-                    <h2>Tempat saya<br><em>belajar kerja.</em></h2>
+                    <span class="eyebrow mono">02 · pengalaman</span>
+                    <h2 data-scramble>Tempat saya <span class="hl">belajar kerja.</span></h2>
                     <p>Dari dapur Starbucks sampai tim IT kementerian, tiap tempat mengajarkan cara kerja yang berbeda.</p>
                 </div>
 
-                <ol class="rows">
-                    <li class="row reveal">
-                        <div class="row-meta mono">Sep 2026 — Sekarang</div>
-                        <div>
+                <div class="timeline">
+                    <span class="timeline-fill" aria-hidden="true"></span>
+                    <ol>
+                    <li class="tl-item reveal">
+                        <div class="tl-card glass">
+                            <span class="tl-meta mono">Sep 2026 — Sekarang</span>
                             <h3>Programmer &amp; System Analyst</h3>
-                            <p class="row-org">Anara Trisakti Medika · Magang · Jakarta Timur</p>
+                            <p class="tl-org">Anara Trisakti Medika · Magang · Jakarta Timur</p>
                         </div>
                     </li>
-                    <li class="row reveal">
-                        <div class="row-meta mono">Agt 2025 — Okt 2025</div>
-                        <div>
+                    <li class="tl-item reveal">
+                        <div class="tl-card glass">
+                            <span class="tl-meta mono">Agt 2025 — Okt 2025</span>
                             <h3>Social Media Specialist / Marketing Intern</h3>
-                            <p class="row-org">Rutee · Magang · Remote</p>
+                            <p class="tl-org">Rutee · Magang · Remote</p>
                             <ul>
                                 <li>Mengelola dan mengembangkan konten media sosial untuk meningkatkan engagement dan brand awareness.</li>
                                 <li>Menganalisis performa konten memakai insight dan metrik media sosial sebagai dasar evaluasi strategi.</li>
@@ -147,39 +195,46 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="row reveal">
-                        <div class="row-meta mono">Agt 2025 — Sep 2025</div>
-                        <div>
+                    <li class="tl-item reveal">
+                        <div class="tl-card glass">
+                            <span class="tl-meta mono">Agt 2025 — Sep 2025</span>
                             <h3>IT Intern</h3>
-                            <p class="row-org">Kementerian Perhubungan Republik Indonesia · Magang · Jakarta Pusat</p>
+                            <p class="tl-org">Kementerian Perhubungan Republik Indonesia · Magang · Jakarta Pusat</p>
                             <div class="tags"><span>Analytical Skills</span><span>Software System Analysis</span></div>
                         </div>
                     </li>
-                    <li class="row reveal">
-                        <div class="row-meta mono">Agt 2022 — Nov 2022</div>
-                        <div>
+                    <li class="tl-item reveal">
+                        <div class="tl-card glass">
+                            <span class="tl-meta mono">Agt 2022 — Nov 2022</span>
                             <h3>Kitchen Staff</h3>
-                            <p class="row-org">Starbucks · Paruh waktu · Jakarta Timur</p>
+                            <p class="tl-org">Starbucks · Paruh waktu · Jakarta Timur</p>
                             <ul>
                                 <li>Menyiapkan makanan sesuai standar kualitas dan kebersihan, serta mengelola inventaris bahan di dapur.</li>
                                 <li>Bekerja sama dengan tim barista untuk memenuhi pesanan pelanggan dengan cepat.</li>
                             </ul>
                         </div>
                     </li>
-                </ol>
+                    </ol>
+                </div>
 
                 <h3 class="subhead reveal">Pendidikan</h3>
                 <div class="edu-grid">
-                    <div class="edu reveal">
-                        <span class="mono">Sep 2022 — Agt 2026</span>
-                        <h3>Universitas Gunadarma</h3>
-                        <p>S1 Sistem Informasi, Sarjana Komputer (S.Kom)</p>
-                        <p class="muted">IPK 3,76 / 4,00 · Skripsi: Market Basket Analysis dengan algoritma Apriori</p>
+                    <div class="edu glass reveal">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <span class="mono">Sep 2022 — Agt 2026</span>
+                            <h3>Universitas Gunadarma</h3>
+                            <p>S1 Sistem Informasi, Sarjana Komputer (S.Kom)</p>
+                            <p class="muted">IPK 3,76 / 4,00 · Skripsi: Market Basket Analysis dengan algoritma Apriori</p>
+                        </div>
                     </div>
-                    <div class="edu reveal">
-                        <span class="mono">SMA</span>
-                        <h3>SMA Negeri 91 Jakarta</h3>
-                        <p>Ilmu Pengetahuan Sosial (IPS)</p>
+                    <div class="edu glass reveal" style="--d:.08s">
+                        <i class="fas fa-school"></i>
+                        <div>
+                            <span class="mono">SMA</span>
+                            <h3>SMA Negeri 91 Jakarta</h3>
+                            <p>Ilmu Pengetahuan Sosial (IPS)</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -189,25 +244,30 @@
         <section id="projects" class="section">
             <div class="wrap">
                 <div class="section-head reveal">
-                    <span class="eyebrow mono">03 — Proyek</span>
-                    <h2>Hal-hal yang<br><em>saya bangun.</em></h2>
-                    <p>Proyek kuliah, skripsi, dan proyek pribadi. Yang punya demo bisa langsung dicoba, kodenya ada di GitHub.</p>
+                    <span class="eyebrow mono">03 · proyek</span>
+                    <h2 data-scramble>Hal-hal yang <span class="hl">saya bangun.</span></h2>
+                    <p>Preview di kartu diambil langsung dari web-nya. Arahkan kursor ke gambar untuk scroll halaman, atau buka demonya.</p>
                 </div>
 
-                <div class="featured">
-                    <article class="case reveal">
-                        <a class="case-media" href="https://parfum-compare.vercel.app" target="_blank" rel="noopener" aria-label="Buka demo Banding Parfum">
-                            <img src="proj_parfum.jpg" alt="Halaman depan Banding Parfum" width="1200" height="750" loading="lazy">
+                <div class="filters reveal" role="group" aria-label="Filter proyek">
+                    <button type="button" class="filter active" data-filter="all">semua</button>
+                    <button type="button" class="filter" data-filter="live">web live</button>
+                    <button type="button" class="filter" data-filter="web">web app</button>
+                    <button type="button" class="filter" data-filter="data">data &amp; ai</button>
+                    <button type="button" class="filter" data-filter="personal">personal</button>
+                </div>
+
+                <div class="projects">
+                    <!-- Banding Parfum -->
+                    <article class="project glass tilt wide reveal" data-category="live web data">
+                        <a class="browser" href="https://parfum-compare.vercel.app" target="_blank" rel="noopener" aria-label="Buka demo Banding Parfum">
+                            <div class="browser-bar"><i></i><i></i><i></i><span class="url">parfum-compare.vercel.app</span><span class="live">live</span></div>
+                            <div class="shot" data-hint="hover untuk scroll ↓"><img src="prev_parfum.jpg" alt="Preview halaman Banding Parfum" width="800" height="2000" loading="lazy"></div>
                         </a>
-                        <div>
-                            <span class="case-index mono">01 · Web App · Data</span>
+                        <div class="project-body">
+                            <span class="project-label mono">web app · data</span>
                             <h3>Banding Parfum</h3>
-                            <p>Website untuk membandingkan <strong>218 parfum dari 47 merek</strong> lokal dan impor berdasarkan harga per ml, kualitas, dan notes. Datanya saya kumpulkan sendiri dengan script Python dari toko resmi, Tokopedia, Fragrantica, dan Female Daily.</p>
-                            <ul>
-                                <li>Skor value 0–100: rating, ketahanan, dan proyeksi dibanding harga per ml.</li>
-                                <li>Pencarian bahasa Indonesia yang toleran typo ("melati", "kopi", "buat cowok").</li>
-                                <li>Kuis rekomendasi, cari dupe lokal dari parfum impor, dan bandingkan hingga 4 parfum.</li>
-                            </ul>
+                            <p>Bandingkan <strong>218 parfum dari 47 merek</strong> lokal &amp; impor berdasarkan harga per ml, kualitas, dan notes. Datanya saya kumpulkan sendiri dengan script Python dari toko resmi, Tokopedia, Fragrantica, dan Female Daily. Ada skor value 0–100, pencarian bahasa Indonesia yang toleran typo, kuis rekomendasi, dan pencari dupe lokal.</p>
                             <div class="tags"><span>JavaScript</span><span>Python</span><span>Web Scraping</span><span>Jaccard Similarity</span></div>
                             <div class="links">
                                 <a class="link link-primary" href="https://parfum-compare.vercel.app" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Demo</a>
@@ -216,19 +276,34 @@
                         </div>
                     </article>
 
-                    <article class="case reveal">
-                        <a class="case-media" href="project_web_development.html" aria-label="Lihat galeri Bedjo Garage">
-                            <img src="proj_bedjo.jpg" alt="Halaman depan website Bedjo Garage" width="1200" height="750" loading="lazy">
+                    <!-- Sistem Pakar Mobil -->
+                    <article class="project glass tilt reveal" data-category="live web" style="--d:.08s">
+                        <a class="browser" href="https://sistem-pakar-laptop-gamma.vercel.app" target="_blank" rel="noopener" aria-label="Buka demo Sistem Pakar Kerusakan Mobil">
+                            <div class="browser-bar"><i></i><i></i><i></i><span class="url">sistem-pakar-laptop-gamma.vercel.app</span><span class="live">live</span></div>
+                            <div class="shot"><img src="prev_pakar_mobil.jpg" alt="Preview Sistem Pakar Kerusakan Mobil" width="800" height="500" loading="lazy"></div>
                         </a>
-                        <div>
-                            <span class="case-index mono">02 · Web App</span>
+                        <div class="project-body">
+                            <span class="project-label mono">sistem pakar</span>
+                            <h3>Sistem Pakar Kerusakan Mobil</h3>
+                            <p>Mendiagnosa kerusakan umum pada mobil dari gejala yang dipilih pengguna. Basis aturannya berjalan sepenuhnya di browser.</p>
+                            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            <div class="links">
+                                <a class="link link-primary" href="https://sistem-pakar-laptop-gamma.vercel.app" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Demo</a>
+                                <a class="link" href="https://github.com/anggerr24/sistem_pakar_laptop" target="_blank" rel="noopener"><i class="fab fa-github"></i> Kode</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Bedjo Garage -->
+                    <article class="project glass tilt reveal" data-category="web">
+                        <a class="browser" href="project_web_development.html" aria-label="Lihat galeri Bedjo Garage">
+                            <div class="browser-bar"><i></i><i></i><i></i><span class="url">localhost/bedjo_garage</span></div>
+                            <div class="shot" data-hint="hover untuk scroll ↓"><img src="prev_bedjo.jpg" alt="Preview website Bedjo Garage" width="800" height="829" loading="lazy"></div>
+                        </a>
+                        <div class="project-body">
+                            <span class="project-label mono">web app</span>
                             <h3>Bedjo Garage</h3>
-                            <p>Website bengkel motor tanpa framework dan tanpa server database terpisah. Pelanggan bisa booking servis dan belanja sparepart, admin mengelola semuanya dari satu panel.</p>
-                            <ul>
-                                <li>Booking servis online dengan slot waktu terbatas.</li>
-                                <li>Pembayaran DP via QRIS dengan verifikasi admin, lengkap dengan invoice.</li>
-                                <li>Toko oli dan sparepart, riwayat booking, dan panel admin.</li>
-                            </ul>
+                            <p>Website bengkel motor: booking servis dengan slot terbatas, pembayaran DP via QRIS dengan verifikasi admin, toko oli &amp; sparepart, dan panel admin.</p>
                             <div class="tags"><span>PHP 8</span><span>SQLite</span><span>JavaScript</span></div>
                             <div class="links">
                                 <a class="link link-primary" href="project_web_development.html"><i class="fas fa-images"></i> Galeri</a>
@@ -237,56 +312,146 @@
                         </div>
                     </article>
 
-                    <article class="case reveal">
-                        <a class="case-media" href="https://sistem-pakar-laptop-gamma.vercel.app" target="_blank" rel="noopener" aria-label="Buka demo Sistem Pakar Kerusakan Mobil">
-                            <img src="proj_pakar_mobil.jpg" alt="Halaman depan Sistem Pakar Kerusakan Mobil" width="1200" height="750" loading="lazy">
+                    <!-- Birthday Quest -->
+                    <article class="project glass tilt reveal" data-category="live personal" style="--d:.08s">
+                        <a class="browser" href="https://bbynaa.vercel.app" target="_blank" rel="noopener" aria-label="Buka Birthday Quest">
+                            <div class="browser-bar"><i></i><i></i><i></i><span class="url">bbynaa.vercel.app</span><span class="live">live</span></div>
+                            <div class="shot"><img src="prev_birthday.jpg" alt="Preview Birthday Quest" width="800" height="500" loading="lazy"></div>
                         </a>
-                        <div>
-                            <span class="case-index mono">03 · Sistem Pakar</span>
-                            <h3>Sistem Pakar Kerusakan Mobil</h3>
-                            <p>Mendiagnosa kerusakan umum pada mobil dari gejala yang dipilih pengguna. Basis aturannya berjalan sepenuhnya di browser, jadi bisa dipakai tanpa server.</p>
-                            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Rule-based</span></div>
+                        <div class="project-body">
+                            <span class="project-label mono">personal · web interaktif</span>
+                            <h3>Birthday Quest</h3>
+                            <p>Kado ulang tahun berbentuk web interaktif: countdown, album foto, kartu alasan, tiup lilin lewat mikrofon, dan lagu. Semua teks, foto, dan lagu diatur dari satu file konfigurasi.</p>
+                            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Web Audio</span></div>
                             <div class="links">
-                                <a class="link link-primary" href="https://sistem-pakar-laptop-gamma.vercel.app" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Demo</a>
-                                <a class="link" href="https://github.com/anggerr24/sistem_pakar_laptop" target="_blank" rel="noopener"><i class="fab fa-github"></i> Kode</a>
+                                <a class="link link-primary" href="https://bbynaa.vercel.app" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Demo</a>
                             </div>
+                        </div>
+                    </article>
+
+                    <!-- For You -->
+                    <article class="project glass tilt reveal" data-category="live personal" style="--d:.16s">
+                        <a class="browser" href="https://viraguste-exe.vercel.app" target="_blank" rel="noopener" aria-label="Buka web For You">
+                            <div class="browser-bar"><i></i><i></i><i></i><span class="url">viraguste-exe.vercel.app</span><span class="live">live</span></div>
+                            <div class="shot" data-hint="hover untuk scroll ↓"><img src="prev_foryou.jpg" alt="Preview web For You" width="800" height="2000" loading="lazy"></div>
+                        </a>
+                        <div class="project-body">
+                            <span class="project-label mono">personal · web interaktif</span>
+                            <h3>For You</h3>
+                            <p>Web kado dengan pemutar musik custom, galeri polaroid, dan photo booth strip. Dibuat sebagai hadiah personal.</p>
+                            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            <div class="links">
+                                <a class="link link-primary" href="https://viraguste-exe.vercel.app" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Demo</a>
+                                <a class="link" href="https://github.com/anggerr24/viraguste.exe" target="_blank" rel="noopener"><i class="fab fa-github"></i> Kode</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Market Basket Analysis -->
+                    <article class="project glass tilt reveal" data-category="data">
+                        <div class="browser" aria-hidden="true">
+                            <div class="browser-bar"><i></i><i></i><i></i><span class="url">skripsi / apriori.ipynb</span></div>
+                            <div class="viz">
+                                <svg viewBox="0 0 260 160" fill="none">
+                                    <line class="stroke dash" x1="60" y1="50" x2="130" y2="85" stroke-width="1.5"/>
+                                    <line class="stroke dash" x1="200" y1="45" x2="130" y2="85" stroke-width="1.5"/>
+                                    <line class="stroke-2 dash" x1="130" y1="85" x2="80" y2="128" stroke-width="1.5"/>
+                                    <line class="stroke-2 dash" x1="130" y1="85" x2="195" y2="125" stroke-width="1.5"/>
+                                    <circle class="fill pulse" cx="60" cy="50" r="13"/>
+                                    <circle class="fill pulse d1" cx="200" cy="45" r="11"/>
+                                    <circle class="fill-2 pulse d2" cx="130" cy="85" r="18"/>
+                                    <circle class="fill pulse d3" cx="80" cy="128" r="10"/>
+                                    <circle class="fill-2 pulse d1" cx="195" cy="125" r="12"/>
+                                    <text class="txt" x="38" y="26">kopi</text>
+                                    <text class="txt" x="186" y="22">roti</text>
+                                    <text class="txt" x="150" y="84">conf 0.82</text>
+                                    <text class="txt" x="44" y="155">susu</text>
+                                    <text class="txt" x="176" y="155">kue</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-label mono">skripsi · data</span>
+                            <h3>Market Basket Analysis</h3>
+                            <p>Mencari menu yang sering dibeli bersamaan dari data transaksi, lalu menyusun rekomendasi bundling dengan Apriori dan association rules.</p>
+                            <div class="tags"><span>Python</span><span>Pandas</span><span>Apriori</span></div>
+                        </div>
+                    </article>
+
+                    <!-- IoT Deteksi Umur -->
+                    <article class="project glass tilt reveal" data-category="data" style="--d:.08s">
+                        <div class="browser" aria-hidden="true">
+                            <div class="browser-bar"><i></i><i></i><i></i><span class="url">localhost:5000 / dashboard</span></div>
+                            <div class="viz">
+                                <svg viewBox="0 0 260 160" fill="none">
+                                    <rect class="stroke" x="70" y="22" width="120" height="116" rx="10" stroke-width="1.5" stroke-dasharray="18 10"/>
+                                    <circle class="stroke-2" cx="130" cy="70" r="24" stroke-width="1.5"/>
+                                    <path class="stroke-2" d="M96 128c6-20 20-30 34-30s28 10 34 30" stroke-width="1.5"/>
+                                    <g class="scan"><line class="stroke" x1="74" y1="80" x2="186" y2="80" stroke-width="2"/></g>
+                                    <rect class="fill-bg stroke" x="150" y="12" width="92" height="24" rx="6" stroke-width="1"/>
+                                    <text class="txt" x="160" y="28">umur ≈ 23</text>
+                                    <circle class="fill pulse" cx="34" cy="124" r="7"/>
+                                    <circle class="fill-2 pulse d2" cx="34" cy="100" r="7"/>
+                                    <text class="txt" x="14" y="152">esp32</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-label mono">iot · computer vision</span>
+                            <h3>IoT Deteksi Umur</h3>
+                            <p>Webcam mendeteksi wajah dengan YOLOv8 dan memperkirakan umur. Hasilnya tampil di dashboard Flask dan dikirim ke ESP32 yang menampilkannya di LCD serta menyalakan LED.</p>
+                            <div class="tags"><span>Python</span><span>YOLOv8</span><span>Flask</span><span>ESP32</span></div>
+                        </div>
+                    </article>
+
+                    <!-- LaptopVerse -->
+                    <article class="project glass tilt reveal" data-category="web data" style="--d:.16s">
+                        <div class="browser" aria-hidden="true">
+                            <div class="browser-bar"><i></i><i></i><i></i><span class="url">localhost/LaptopVerse</span></div>
+                            <div class="viz">
+                                <svg viewBox="0 0 260 160" fill="none">
+                                    <text class="txt" x="14" y="34">#1</text><rect class="fill bar" x="42" y="22" width="190" height="16" rx="4"/>
+                                    <text class="txt" x="14" y="66">#2</text><rect class="fill-2 bar b2" x="42" y="54" width="160" height="16" rx="4"/>
+                                    <text class="txt" x="14" y="98">#3</text><rect class="fill bar b3" x="42" y="86" width="132" height="16" rx="4" opacity=".75"/>
+                                    <text class="txt" x="14" y="130">#4</text><rect class="fill-2 bar b4" x="42" y="118" width="100" height="16" rx="4" opacity=".75"/>
+                                    <text class="txt" x="178" y="154">skor SAW</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-label mono">spk · tugas kuliah</span>
+                            <h3>LaptopVerse — SPK SAW</h3>
+                            <p>Membantu memilih laptop sesuai prioritas pengguna dengan Simple Additive Weighting: normalisasi, pembobotan, lalu peringkat, perbandingan, dan favorit.</p>
+                            <div class="tags"><span>PHP 8</span><span>MySQL</span><span>Bootstrap 5</span></div>
+                        </div>
+                    </article>
+
+                    <!-- Sistem Pakar Motor -->
+                    <article class="project glass tilt reveal" data-category="web">
+                        <div class="browser" aria-hidden="true">
+                            <div class="browser-bar"><i></i><i></i><i></i><span class="url">localhost/sistem_pakar_motor</span></div>
+                            <div class="viz">
+                                <svg viewBox="0 0 260 160" fill="none">
+                                    <rect class="fill-bg stroke" x="95" y="10" width="70" height="26" rx="6" stroke-width="1.2"/><text class="txt" x="109" y="27">gejala</text>
+                                    <path class="stroke dash" d="M130 36v18M130 54H62v16M130 54h68v16" stroke-width="1.4"/>
+                                    <rect class="fill-bg stroke-2" x="28" y="70" width="68" height="24" rx="6" stroke-width="1.2"/><text class="txt" x="44" y="86">aturan</text>
+                                    <rect class="fill-bg stroke-2" x="164" y="70" width="68" height="24" rx="6" stroke-width="1.2"/><text class="txt" x="180" y="86">aturan</text>
+                                    <path class="stroke-2 dash" d="M62 94v18h68v14M198 94v18h-68" stroke-width="1.4"/>
+                                    <rect class="fill pulse" x="90" y="126" width="80" height="26" rx="6"/><text x="104" y="143" font-family="JetBrains Mono, monospace" font-size="11" fill="#062320">diagnosa</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-label mono">sistem pakar</span>
+                            <h3>Diagnosa Kerusakan Motor</h3>
+                            <p>Mengidentifikasi masalah motor dari gejala pengguna. Aturan diagnosa disimpan di database, jadi mudah ditambah tanpa mengubah kode.</p>
+                            <div class="tags"><span>PHP</span><span>MySQL</span></div>
                         </div>
                     </article>
                 </div>
 
-                <div class="more-head reveal">
-                    <h3>Proyek lainnya</h3>
-                    <span class="mono muted">04 — 07</span>
-                </div>
-                <div class="cards">
-                    <article class="card reveal">
-                        <div class="card-top"><i class="fas fa-basket-shopping"></i><span class="mono">Skripsi · Data</span></div>
-                        <h4>Market Basket Analysis</h4>
-                        <p>Mencari menu yang sering dibeli bersamaan dari data transaksi, lalu menyusun rekomendasi bundling. Alurnya: pembersihan data, transformasi ke basket, Apriori, dan association rules.</p>
-                        <div class="tags"><span>Python</span><span>Pandas</span><span>Apriori</span></div>
-                    </article>
-                    <article class="card reveal">
-                        <div class="card-top"><i class="fas fa-microchip"></i><span class="mono">IoT · Computer Vision</span></div>
-                        <h4>IoT Deteksi Umur</h4>
-                        <p>Webcam mendeteksi wajah dengan YOLOv8 lalu memperkirakan umur. Hasilnya tampil di dashboard web dan dikirim ke ESP32 yang menampilkannya di LCD dan menyalakan LED sesuai kategori umur.</p>
-                        <div class="tags"><span>Python</span><span>YOLOv8</span><span>Flask</span><span>ESP32</span></div>
-                    </article>
-                    <article class="card reveal">
-                        <div class="card-top"><i class="fas fa-laptop"></i><span class="mono">SPK · Tugas kuliah</span></div>
-                        <h4>LaptopVerse — SPK SAW</h4>
-                        <p>Membantu memilih laptop sesuai prioritas pengguna. Data dinormalisasi, nilai preferensi dihitung dengan Simple Additive Weighting, lalu ditampilkan peringkat, perbandingan, dan favorit.</p>
-                        <div class="tags"><span>PHP 8</span><span>MySQL</span><span>Bootstrap 5</span></div>
-                    </article>
-                    <article class="card reveal">
-                        <div class="card-top"><i class="fas fa-motorcycle"></i><span class="mono">Sistem Pakar</span></div>
-                        <h4>Diagnosa Kerusakan Motor</h4>
-                        <p>Mengidentifikasi masalah motor dari gejala yang dialami pengguna. Aturan diagnosa disimpan di database, jadi mudah ditambah tanpa mengubah kode.</p>
-                        <div class="tags"><span>PHP</span><span>MySQL</span></div>
-                    </article>
-                </div>
-
                 <p class="page-links reveal">
-                    <span class="mono">Detail per bidang →</span>
+                    <span class="mono">detail per bidang →</span>
                     <a class="link" href="project_web_development.html">Web Development</a>
                     <a class="link" href="project_data_analysis.html">Data &amp; AI</a>
                     <a class="link" href="project_social_media.html">Social Media</a>
@@ -298,56 +463,42 @@
         <section id="skills" class="section">
             <div class="wrap">
                 <div class="section-head reveal">
-                    <span class="eyebrow mono">04 — Keahlian</span>
-                    <h2>Alat yang<br><em>saya pakai.</em></h2>
+                    <span class="eyebrow mono">04 · keahlian</span>
+                    <h2 data-scramble>Alat yang <span class="hl">saya pakai.</span></h2>
                     <p>Bahasa pemrograman, tools data, dan kemampuan pendukung yang saya pakai di proyek dan pekerjaan.</p>
                 </div>
-                <div class="skills reveal">
-                    <div class="skill-col">
+                <div class="skills">
+                    <div class="skill-group glass reveal">
                         <h3><i class="fas fa-code"></i> Pemrograman</h3>
-                        <ul>
-                            <li>Python</li>
-                            <li>PHP</li>
-                            <li>JavaScript</li>
-                            <li>HTML &amp; CSS</li>
-                            <li>SQL / MySQL / SQLite</li>
-                            <li>C / C++</li>
+                        <ul class="chips">
+                            <li><i class="fab fa-python"></i> Python</li>
+                            <li><i class="fab fa-php"></i> PHP</li>
+                            <li><i class="fab fa-js"></i> JavaScript</li>
+                            <li><i class="fab fa-html5"></i> HTML &amp; CSS</li>
+                            <li><i class="fas fa-database"></i> SQL</li>
+                            <li><i class="fas fa-terminal"></i> C/C++</li>
                         </ul>
                     </div>
-                    <div class="skill-col">
+                    <div class="skill-group glass reveal" style="--d:.08s">
                         <h3><i class="fas fa-chart-line"></i> Data</h3>
-                        <ul>
-                            <li>Pandas</li>
-                            <li>Power BI</li>
-                            <li>Tableau</li>
-                            <li>Microsoft Excel</li>
-                            <li>Web Scraping</li>
-                            <li>Data Entry</li>
+                        <ul class="chips">
+                            <li>Pandas</li><li>Power BI</li><li>Tableau</li><li>Excel</li><li>Web Scraping</li><li>Data Entry</li>
                         </ul>
                     </div>
-                    <div class="skill-col">
+                    <div class="skill-group glass reveal" style="--d:.16s">
                         <h3><i class="fas fa-diagram-project"></i> Sistem</h3>
-                        <ul>
-                            <li>Software System Analysis</li>
-                            <li>Project Management</li>
-                            <li>Cisco Networking</li>
-                            <li>Ethical Hacking</li>
-                            <li>Git &amp; GitHub · Vercel</li>
-                            <li>Microsoft Office</li>
+                        <ul class="chips">
+                            <li>System Analysis</li><li>Project Management</li><li>Cisco Networking</li><li>Ethical Hacking</li><li><i class="fab fa-git-alt"></i> Git</li><li>Vercel</li>
                         </ul>
                     </div>
-                    <div class="skill-col">
+                    <div class="skill-group glass reveal" style="--d:.24s">
                         <h3><i class="fas fa-bullhorn"></i> Kreatif</h3>
-                        <ul>
-                            <li>Social Media Marketing</li>
-                            <li>SEO &amp; Analytics</li>
-                            <li>Brand Awareness</li>
-                            <li>Canva</li>
-                            <li>CapCut</li>
+                        <ul class="chips">
+                            <li>Social Media Marketing</li><li>SEO &amp; Analytics</li><li>Brand Awareness</li><li>Canva</li><li>CapCut</li>
                         </ul>
                     </div>
                 </div>
-                <p class="languages reveal"><i class="fas fa-language"></i> Bahasa Indonesia (profesional) · Bahasa Inggris (terbatas namun fungsional)</p>
+                <p class="languages glass reveal"><i class="fas fa-language"></i> Bahasa Indonesia (profesional) · Bahasa Inggris (terbatas namun fungsional)</p>
             </div>
         </section>
 
@@ -355,20 +506,20 @@
         <section id="certifications" class="section">
             <div class="wrap">
                 <div class="section-head reveal">
-                    <span class="eyebrow mono">05 — Sertifikasi</span>
-                    <h2>Terus<br><em>belajar.</em></h2>
+                    <span class="eyebrow mono">05 · sertifikasi</span>
+                    <h2 data-scramble>Terus <span class="hl">belajar.</span></h2>
                     <p>Pelatihan dan sertifikasi dari kampus, Pacmann, dan Digital Talent Scholarship.</p>
                 </div>
-                <ul class="certs reveal">
-                    <li class="cert"><span class="mono">Feb 2026</span><h3>Data Visualization with Tableau &amp; Data Wrangling with Python</h3><p>Pacmann</p></li>
-                    <li class="cert"><span class="mono">Feb 2026</span><h3>Excel Hacks for Business Professional</h3><p>Pacmann</p></li>
-                    <li class="cert"><span class="mono">Feb 2026</span><h3>Ethical Hacker For Dummies</h3><p>Digital Talent Scholarship</p></li>
-                    <li class="cert"><span class="mono">Sep 2025</span><h3>Analyze Software Requirements</h3><p>Universitas Gunadarma</p></li>
-                    <li class="cert"><span class="mono">Des 2024</span><h3>Introduction to Cloud and AI Applications for Digital Business</h3><p>Digital Talent Scholarship</p></li>
-                    <li class="cert"><span class="mono">Des 2024</span><h3>Microcredential — Startup Foundation</h3><p>Digital Talent Scholarship</p></li>
-                    <li class="cert"><span class="mono">Des 2024</span><h3>Introduction to Wireless LAN Installation</h3><p>Universitas Gunadarma</p></li>
-                    <li class="cert"><span class="mono">Agt 2023</span><h3>Fundamental Networking</h3><p>Universitas Gunadarma</p></li>
-                    <li class="cert"><span class="mono">Feb 2023</span><h3>Fundamental DBMS</h3><p>Universitas Gunadarma</p></li>
+                <ul class="certs">
+                    <li class="cert glass reveal"><span class="mono">Feb 2026</span><h3>Data Visualization with Tableau &amp; Data Wrangling with Python</h3><p>Pacmann</p></li>
+                    <li class="cert glass reveal" style="--d:.06s"><span class="mono">Feb 2026</span><h3>Excel Hacks for Business Professional</h3><p>Pacmann</p></li>
+                    <li class="cert glass reveal" style="--d:.12s"><span class="mono">Feb 2026</span><h3>Ethical Hacker For Dummies</h3><p>Digital Talent Scholarship</p></li>
+                    <li class="cert glass reveal"><span class="mono">Sep 2025</span><h3>Analyze Software Requirements</h3><p>Universitas Gunadarma</p></li>
+                    <li class="cert glass reveal" style="--d:.06s"><span class="mono">Des 2024</span><h3>Introduction to Cloud and AI Applications for Digital Business</h3><p>Digital Talent Scholarship</p></li>
+                    <li class="cert glass reveal" style="--d:.12s"><span class="mono">Des 2024</span><h3>Microcredential — Startup Foundation</h3><p>Digital Talent Scholarship</p></li>
+                    <li class="cert glass reveal"><span class="mono">Des 2024</span><h3>Introduction to Wireless LAN Installation</h3><p>Universitas Gunadarma</p></li>
+                    <li class="cert glass reveal" style="--d:.06s"><span class="mono">Agt 2023</span><h3>Fundamental Networking</h3><p>Universitas Gunadarma</p></li>
+                    <li class="cert glass reveal" style="--d:.12s"><span class="mono">Feb 2023</span><h3>Fundamental DBMS</h3><p>Universitas Gunadarma</p></li>
                 </ul>
             </div>
         </section>
@@ -376,13 +527,19 @@
         <!-- Kontak -->
         <section id="contact" class="contact">
             <div class="wrap">
-                <span class="eyebrow mono">06 — Kontak</span>
-                <h2>Ada lowongan<br>atau ide? <em>Ngobrol yuk.</em></h2>
-                <a class="contact-mail" href="mailto:angger2434@gmail.com">angger2434@gmail.com <i class="fas fa-arrow-right"></i></a>
-                <div class="contact-links">
-                    <a class="contact-link" href="https://www.linkedin.com/in/angger-rizky-rambudia-972556255/" target="_blank" rel="noopener"><span><i class="fab fa-linkedin-in"></i> LinkedIn</span><i class="fas fa-arrow-right go"></i></a>
-                    <a class="contact-link" href="https://github.com/anggerr24" target="_blank" rel="noopener"><span><i class="fab fa-github"></i> GitHub</span><i class="fas fa-arrow-right go"></i></a>
-                    <a class="contact-link" href="https://www.instagram.com/angger_rzky/" target="_blank" rel="noopener"><span><i class="fab fa-instagram"></i> Instagram</span><i class="fas fa-arrow-right go"></i></a>
+                <div class="contact-card glass reveal">
+                    <span class="eyebrow mono">06 · kontak</span>
+                    <h2 data-scramble>Ada lowongan atau ide? <span class="hl">Ngobrol yuk.</span></h2>
+                    <p>Saya terbuka untuk kerja penuh waktu, magang, maupun kolaborasi proyek. Biasanya saya balas dalam 1–2 hari.</p>
+                    <div class="mail-row">
+                        <a class="btn magnetic" href="mailto:angger2434@gmail.com"><i class="fas fa-envelope"></i> angger2434@gmail.com</a>
+                        <button type="button" class="btn btn-ghost copy-btn" data-copy="angger2434@gmail.com"><i class="far fa-copy"></i> <span>Salin email</span></button>
+                    </div>
+                    <div class="contact-links">
+                        <a class="link" href="https://www.linkedin.com/in/angger-rizky-rambudia-972556255/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                        <a class="link" href="https://github.com/anggerr24" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                        <a class="link" href="https://www.instagram.com/angger_rzky/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -390,8 +547,8 @@
 
     <footer class="site-footer">
         <div class="wrap">
-            <span class="mono">© <span data-year>2026</span> Angger Rizky Rambudia</span>
-            <a class="mono" href="#home">Kembali ke atas ↑</a>
+            <span class="mono">© <span data-year>2026</span> Angger Rizky Rambudia · dibuat dengan HTML, CSS &amp; JS</span>
+            <a class="mono" href="#home">kembali ke atas ↑</a>
         </div>
     </footer>
 

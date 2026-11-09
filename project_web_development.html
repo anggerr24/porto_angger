@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Development — Angger Rizky Rambudia</title>
     <meta name="description" content="Proyek web development Angger Rizky Rambudia: Banding Parfum, Bedjo Garage, sistem pakar, dan SPK.">
-    <meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#12110e" media="(prefers-color-scheme: dark)">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317150f'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23ff6b3d'%3EA%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#091214">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23091214'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='30' fill='%237fd1c1'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
     <script>
         (function () {
             document.documentElement.classList.add('js');
@@ -19,16 +18,18 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a href="#main" class="skip-link">Langsung ke konten</a>
+    <div class="progress" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
     <header class="site-header">
         <nav class="wrap nav" aria-label="Navigasi utama">
-            <a href="index.html" class="brand">Angger<em>.</em></a>
+            <a href="index.html" class="brand" aria-label="Angger, ke beranda"><b>&lt;</b>angger<b>/&gt;</b><span class="caret"></span></a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="project_web_development.html" class="active" aria-current="page">Web Development</a></li>
                 <li><a href="project_data_analysis.html">Data &amp; AI</a></li>
@@ -37,7 +38,7 @@
             </ul>
             <div class="nav-tools">
                 <button type="button" class="icon-btn theme-toggle" aria-label="Ganti tema terang/gelap">
-                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                    <i class="fas fa-sun"></i><i class="fas fa-moon"></i>
                 </button>
                 <button type="button" class="icon-btn nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
                     <i class="fas fa-bars"></i>
@@ -48,6 +49,7 @@
 
     <main id="main">
         <section class="page-hero">
+            <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
             <div class="wrap">
                 <a class="back mono" href="index.html#projects"><i class="fas fa-arrow-left"></i> Semua proyek</a>
                 <h1>Web <em>Development</em></h1>
@@ -73,7 +75,7 @@
                 <h2 class="reveal">Daftar Proyek</h2>
                 <div class="detail-list">
                     <article class="detail reveal">
-                        <a class="detail-media" href="https://parfum-compare.vercel.app" target="_blank" rel="noopener"><img src="proj_parfum.jpg" alt="Halaman depan Banding Parfum" loading="lazy"></a>
+                        <a class="detail-media" href="https://parfum-compare.vercel.app" target="_blank" rel="noopener"><img src="prev_parfum.jpg" alt="Halaman depan Banding Parfum" loading="lazy"></a>
                         <div class="detail-body">
                             <span class="mono">Web App · Proyek pribadi</span>
                             <h3>Banding Parfum</h3>
@@ -94,7 +96,7 @@
                     </article>
 
                     <article class="detail reveal">
-                        <div class="detail-media"><img src="proj_bedjo.jpg" alt="Tampilan website Bedjo Garage" loading="lazy"></div>
+                        <div class="detail-media"><img src="prev_bedjo.jpg" alt="Tampilan website Bedjo Garage" loading="lazy"></div>
                         <div class="detail-body">
                             <span class="mono">Web App</span>
                             <h3>Bedjo Garage</h3>
@@ -113,7 +115,7 @@
                     </article>
 
                     <article class="detail reveal">
-                        <a class="detail-media" href="https://sistem-pakar-laptop-gamma.vercel.app" target="_blank" rel="noopener"><img src="proj_pakar_mobil.jpg" alt="Halaman depan Sistem Pakar Kerusakan Mobil" loading="lazy"></a>
+                        <a class="detail-media" href="https://sistem-pakar-laptop-gamma.vercel.app" target="_blank" rel="noopener"><img src="prev_pakar_mobil.jpg" alt="Halaman depan Sistem Pakar Kerusakan Mobil" loading="lazy"></a>
                         <div class="detail-body">
                             <span class="mono">Sistem Pakar</span>
                             <h3>Sistem Pakar Kerusakan Mobil</h3>
