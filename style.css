@@ -906,24 +906,21 @@ body::before {
     color: var(--muted);
 }
 .cert-gallery + .cert-group { margin-top: 48px; }
-.pbi-head { margin-top: clamp(56px, 8vw, 88px); }
-.pbi-intro { margin: -6px 0 20px; max-width: 640px; color: var(--text-2); }
+button.browser { display: block; width: 100%; padding: 0; text-align: left; cursor: zoom-in; }
+button.browser .browser-bar, button.browser .shot { display: flex; }
+button.browser .shot { display: block; }
+.project:hover .cert-zoom, button.browser:focus-visible .cert-zoom { opacity: 1; transform: none; }
 .pbi-gallery .cert-frame { aspect-ratio: 16 / 9; background: #fff; }
 .pbi-gallery .cert-frame img { object-fit: contain; }
 .pages-badge {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    z-index: 1;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 9px;
-    border-radius: 6px;
-    background: rgba(6, 20, 20, 0.78);
-    color: #cfe9e4;
-    font-size: 0.7rem;
+    position: absolute; left: 10px; top: 10px; z-index: 1;
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 9px; border-radius: 6px;
+    background: rgba(6, 20, 20, 0.78); color: #cfe9e4; font-size: 0.7rem;
 }
+.subnav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: clamp(36px, 5vw, 56px); }
+.subnav .link i { color: var(--accent); }
+.sub-intro { margin: -10px 0 22px; max-width: 640px; color: var(--text-2); }
 .cert-info { display: flex; flex-direction: column; gap: 6px; padding: 16px 20px 20px; }
 .cert-info .mono { color: var(--accent); }
 .cert-title { font-family: var(--font-display); font-size: 1.08rem; font-weight: 600; line-height: 1.35; color: var(--text); }

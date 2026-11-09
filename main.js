@@ -315,7 +315,7 @@
     // Tiap galeri punya daftar slide sendiri; satu kartu boleh berisi beberapa gambar
     // (data-full="a.png|b.png", data-caption="cap a|cap b").
     var lb = document.querySelector('.lightbox');
-    var lbCards = Array.prototype.slice.call(document.querySelectorAll('.cert-card[data-full]'));
+    var lbCards = Array.prototype.slice.call(document.querySelectorAll('[data-full]'));
     if (lb && lbCards.length && typeof lb.showModal === 'function') {
         var lbImg = lb.querySelector('.lb-img');
         var lbCap = lb.querySelector('.lb-cap');
@@ -323,7 +323,7 @@
 
         function slidesFor(gallery) {
             var out = [];
-            gallery.querySelectorAll('.cert-card[data-full]').forEach(function (c) {
+            gallery.querySelectorAll('[data-full]').forEach(function (c) {
                 var srcs = c.dataset.full.split('|');
                 var caps = (c.dataset.caption || '').split('|');
                 var alt = c.querySelector('img') ? c.querySelector('img').alt : '';
@@ -345,7 +345,7 @@
         }
         lbCards.forEach(function (c) {
             c.addEventListener('click', function () {
-                var gallery = c.closest('.cert-gallery') || c.parentElement;
+                var gallery = c.closest('.cert-gallery') || c.closest('.project') || c.parentElement;
                 slides = slidesFor(gallery);
                 lastFocus = c;
                 for (var k = 0; k < slides.length; k++) { if (slides[k].card === c) break; }
@@ -354,6 +354,12 @@
                 lb.querySelector('.lb-prev').style.visibility = multi ? '' : 'hidden';
                 lb.querySelector('.lb-next').style.visibility = multi ? '' : 'hidden';
                 lb.showModal();
+            });
+        });
+        document.querySelectorAll('.open-gallery').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var t = btn.closest('.project') && btn.closest('.project').querySelector('[data-full]');
+                if (t) t.click();
             });
         });
         lb.querySelector('.lb-close').addEventListener('click', function () { lb.close(); });
