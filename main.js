@@ -311,28 +311,48 @@
         });
     });
 
-    /* ---------- Lightbox sertifikat ---------- */
+    /* ---------- Lightbox (sertifikat & dashboard) ---------- */
+    // Tiap galeri punya daftar slide sendiri; satu kartu boleh berisi beberapa gambar
+    // (data-full="a.png|b.png", data-caption="cap a|cap b").
     var lb = document.querySelector('.lightbox');
-    var certCards = Array.prototype.slice.call(document.querySelectorAll('.cert-card[data-full]'));
-    if (lb && certCards.length && typeof lb.showModal === 'function') {
+    var lbCards = Array.prototype.slice.call(document.querySelectorAll('.cert-card[data-full]'));
+    if (lb && lbCards.length && typeof lb.showModal === 'function') {
         var lbImg = lb.querySelector('.lb-img');
         var lbCap = lb.querySelector('.lb-cap');
-        var lbIndex = 0;
-        var lastFocus = null;
+        var slides = [], lbIndex = 0, lastFocus = null;
+
+        function slidesFor(gallery) {
+            var out = [];
+            gallery.querySelectorAll('.cert-card[data-full]').forEach(function (c) {
+                var srcs = c.dataset.full.split('|');
+                var caps = (c.dataset.caption || '').split('|');
+                var alt = c.querySelector('img') ? c.querySelector('img').alt : '';
+                srcs.forEach(function (src, k) {
+                    out.push({ card: c, src: src, cap: caps[k] || caps[0], alt: alt });
+                });
+            });
+            return out;
+        }
         function show(i) {
-            lbIndex = (i + certCards.length) % certCards.length;
-            var c = certCards[lbIndex];
+            lbIndex = (i + slides.length) % slides.length;
+            var sl = slides[lbIndex];
             lbImg.style.animation = 'none';
             void lbImg.offsetWidth;
             lbImg.style.animation = '';
-            lbImg.src = c.dataset.full;
-            lbImg.alt = c.querySelector('img').alt;
-            lbCap.textContent = c.dataset.caption;
+            lbImg.src = sl.src;
+            lbImg.alt = sl.alt;
+            lbCap.textContent = sl.cap + (slides.length > 1 ? '  ·  ' + (lbIndex + 1) + '/' + slides.length : '');
         }
-        certCards.forEach(function (c, i) {
+        lbCards.forEach(function (c) {
             c.addEventListener('click', function () {
+                var gallery = c.closest('.cert-gallery') || c.parentElement;
+                slides = slidesFor(gallery);
                 lastFocus = c;
-                show(i);
+                for (var k = 0; k < slides.length; k++) { if (slides[k].card === c) break; }
+                show(k);
+                var multi = slides.length > 1;
+                lb.querySelector('.lb-prev').style.visibility = multi ? '' : 'hidden';
+                lb.querySelector('.lb-next').style.visibility = multi ? '' : 'hidden';
                 lb.showModal();
             });
         });
@@ -345,7 +365,6 @@
             if (e.key === 'ArrowRight') show(lbIndex + 1);
         });
         lb.addEventListener('close', function () { if (lastFocus) lastFocus.focus(); });
-        // geser di HP
         var sx = null;
         lb.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
         lb.addEventListener('touchend', function (e) {
