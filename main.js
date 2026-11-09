@@ -5,6 +5,16 @@
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
+    /* ---------- Refresh selalu mulai dari paling atas ---------- */
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    var navEntry = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    var isReload = navEntry ? navEntry.type === 'reload' : (performance.navigation && performance.navigation.type === 1);
+    if (isReload) {
+        if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        window.addEventListener('load', function () { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); });
+    }
+
     /* ---------- Intro singkat (sekali per sesi) ---------- */
     var intro = document.querySelector('.intro');
     if (intro) {
