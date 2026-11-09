@@ -3,84 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyek Web Development — Angger Rizky Rambudia</title>
-    <meta name="description" content="Proyek web development Angger Rizky Rambudia: Bedjo Garage, LaptopVerse, sistem pakar, dan lainnya.">
-    <meta name="theme-color" content="#0b1120">
+    <title>Web Development — Angger Rizky Rambudia</title>
+    <meta name="description" content="Proyek web development Angger Rizky Rambudia: Banding Parfum, Bedjo Garage, sistem pakar, dan SPK.">
+    <meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#12110e" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317150f'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23ff6b3d'%3EA%3C/text%3E%3C/svg%3E">
+    <script>
+        (function () {
+            document.documentElement.classList.add('js');
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="index.html" class="logo">Angger<span>.</span></a>
-            <button type="button" class="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
-                <i class="fas fa-bars"></i>
-            </button>
+    <a href="#main" class="skip-link">Langsung ke konten</a>
+
+    <header class="site-header">
+        <nav class="wrap nav" aria-label="Navigasi utama">
+            <a href="index.html" class="brand">Angger<em>.</em></a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="project_web_development.html" class="active">Web Dev</a></li>
-                <li><a href="project_data_analysis.html">Data Analysis</a></li>
+                <li><a href="project_web_development.html" class="active" aria-current="page">Web Development</a></li>
+                <li><a href="project_data_analysis.html">Data &amp; AI</a></li>
                 <li><a href="project_social_media.html">Social Media</a></li>
-                <li><a href="index.html#contact" class="nav-cta">Kontak</a></li>
+                <li><a href="index.html#contact">Kontak</a></li>
             </ul>
+            <div class="nav-tools">
+                <button type="button" class="icon-btn theme-toggle" aria-label="Ganti tema terang/gelap">
+                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                </button>
+                <button type="button" class="icon-btn nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </nav>
     </header>
 
-    <main>
+    <main id="main">
         <section class="page-hero">
-            <div class="container">
-                <h1>Web Development</h1>
-                <p>Aplikasi web yang saya bangun, mulai dari sistem booking bengkel, sistem penunjang keputusan, hingga sistem pakar. Kebanyakan memakai PHP dengan MySQL/SQLite, serta HTML, CSS, dan JavaScript.</p>
+            <div class="wrap">
+                <a class="back mono" href="index.html#projects"><i class="fas fa-arrow-left"></i> Semua proyek</a>
+                <h1>Web <em>Development</em></h1>
+                <p>Aplikasi web yang saya bangun: sistem booking bengkel, website perbandingan parfum, sistem penunjang keputusan, dan sistem pakar. Kebanyakan memakai PHP dengan MySQL/SQLite, atau HTML, CSS, dan JavaScript murni.</p>
             </div>
         </section>
 
         <section class="page-section">
-            <div class="container">
-                <h2>Bedjo Garage — Galeri</h2>
-                <div class="bengkel-slider" aria-roledescription="carousel" aria-label="Galeri website Bedjo Garage">
+            <div class="wrap">
+                <h2 class="reveal">Bedjo Garage — Galeri</h2>
+                <div class="bengkel-slider reveal" aria-roledescription="carousel" aria-label="Galeri website Bedjo Garage">
                     <button class="bengkel-prev" aria-label="Sebelumnya">‹</button>
                     <div class="bengkel-viewport">
                         <div class="bengkel-track">
-                            <div class="bengkel-slide">
-                                <img src="webproj_bengkel_1.jpg" alt="Website Bedjo Garage: halaman depan">
-                            </div>
-                            <div class="bengkel-slide">
-                                <img src="webproj_bengkel_2.jpg" alt="Website Bedjo Garage: halaman layanan">
-                            </div>
+                            <div class="bengkel-slide"><img src="webproj_bengkel_1.jpg" alt="Website Bedjo Garage: halaman depan"></div>
+                            <div class="bengkel-slide"><img src="webproj_bengkel_2.jpg" alt="Website Bedjo Garage: halaman layanan"></div>
                         </div>
                     </div>
                     <button class="bengkel-next" aria-label="Selanjutnya">›</button>
                     <div class="bengkel-dots" role="tablist" aria-label="Navigasi slide"></div>
                 </div>
 
-                <h2>Daftar Proyek</h2>
+                <h2 class="reveal">Daftar Proyek</h2>
                 <div class="detail-list">
-                    <article class="detail">
-                        <div class="project-cover"><img src="webproj_bengkel_2.jpg" alt="Tampilan website Bedjo Garage" loading="lazy"></div>
-                        <div class="project-body">
-                            <span class="project-label">Web App</span>
-                            <h3>Bedjo Garage</h3>
-                            <p>Website untuk bengkel motor, tanpa framework dan tanpa server database terpisah.</p>
+                    <article class="detail reveal">
+                        <a class="detail-media" href="https://parfum-compare.vercel.app" target="_blank" rel="noopener"><img src="proj_parfum.jpg" alt="Halaman depan Banding Parfum" loading="lazy"></a>
+                        <div class="detail-body">
+                            <span class="mono">Web App · Proyek pribadi</span>
+                            <h3>Banding Parfum</h3>
+                            <p>Website statis untuk membandingkan 218 parfum lokal dan impor dari 47 merek. Tidak perlu server: semua data dan logika berjalan di browser.</p>
                             <ul>
-                                <li>Booking servis online dengan slot waktu terbatas.</li>
-                                <li>Pembayaran DP via QRIS dengan verifikasi oleh admin.</li>
-                                <li>Toko oli dan sparepart.</li>
-                                <li>Panel admin untuk mengelola booking, pembayaran, dan produk.</li>
+                                <li>Filter merek, gender, family, acara &amp; cuaca, harga, notes, dan favorit.</li>
+                                <li>Pencarian bahasa Indonesia yang toleran typo, plus kuis rekomendasi 5 pertanyaan.</li>
+                                <li>Cari dupe lokal dari parfum impor, lengkap dengan persen penghematan per ml.</li>
+                                <li>Bandingkan hingga 4 parfum dan cari parfum mirip berdasarkan kesamaan notes.</li>
+                                <li>Mode gelap dan link beli langsung ke Tokopedia dan Shopee.</li>
                             </ul>
-                            <div class="tags"><span>PHP 8</span><span>SQLite</span><span>JavaScript</span><span>HTML &amp; CSS</span></div>
-                            <div class="project-links">
-                                <a href="https://github.com/anggerr24/bedjo-garage-website" target="_blank" rel="noopener"><i class="fab fa-github"></i> Kode di GitHub</a>
+                            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vercel</span></div>
+                            <div class="links">
+                                <a class="link link-primary" href="https://parfum-compare.vercel.app" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Demo</a>
+                                <a class="link" href="https://github.com/anggerr24/parfum-compare" target="_blank" rel="noopener"><i class="fab fa-github"></i> Kode</a>
                             </div>
                         </div>
                     </article>
 
-                    <article class="detail">
-                        <div class="project-cover cover-web"><i class="fas fa-laptop"></i></div>
-                        <div class="project-body">
-                            <span class="project-label">Sistem Penunjang Keputusan · Tugas kuliah</span>
+                    <article class="detail reveal">
+                        <div class="detail-media"><img src="proj_bedjo.jpg" alt="Tampilan website Bedjo Garage" loading="lazy"></div>
+                        <div class="detail-body">
+                            <span class="mono">Web App</span>
+                            <h3>Bedjo Garage</h3>
+                            <p>Website untuk bengkel motor, tanpa framework dan tanpa server database terpisah.</p>
+                            <ul>
+                                <li>Booking servis online dengan slot waktu terbatas.</li>
+                                <li>Pembayaran DP via QRIS dengan verifikasi oleh admin, lengkap dengan invoice.</li>
+                                <li>Toko oli dan sparepart.</li>
+                                <li>Panel admin untuk mengelola booking, pembayaran, dan produk.</li>
+                            </ul>
+                            <div class="tags"><span>PHP 8</span><span>SQLite</span><span>JavaScript</span><span>HTML &amp; CSS</span></div>
+                            <div class="links">
+                                <a class="link" href="https://github.com/anggerr24/bedjo_garage" target="_blank" rel="noopener"><i class="fab fa-github"></i> Kode (versi awal, MySQL)</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="detail reveal">
+                        <a class="detail-media" href="https://sistem-pakar-laptop-gamma.vercel.app" target="_blank" rel="noopener"><img src="proj_pakar_mobil.jpg" alt="Halaman depan Sistem Pakar Kerusakan Mobil" loading="lazy"></a>
+                        <div class="detail-body">
+                            <span class="mono">Sistem Pakar</span>
+                            <h3>Sistem Pakar Kerusakan Mobil</h3>
+                            <p>Mendiagnosa kerusakan umum pada mobil berdasarkan gejala yang dipilih pengguna. Berjalan sepenuhnya di browser.</p>
+                            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            <div class="links">
+                                <a class="link link-primary" href="https://sistem-pakar-laptop-gamma.vercel.app" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Demo</a>
+                                <a class="link" href="https://github.com/anggerr24/sistem_pakar_laptop" target="_blank" rel="noopener"><i class="fab fa-github"></i> Kode</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="detail reveal">
+                        <div class="detail-media icon"><i class="fas fa-laptop"></i></div>
+                        <div class="detail-body">
+                            <span class="mono">Sistem Penunjang Keputusan · Tugas kuliah</span>
                             <h3>LaptopVerse — SPK Metode SAW</h3>
                             <p>Membantu pengguna memilih laptop terbaik sesuai prioritas mereka dengan metode Simple Additive Weighting.</p>
                             <ul>
@@ -92,74 +141,43 @@
                         </div>
                     </article>
 
-                    <article class="detail">
-                        <div class="project-cover cover-web"><i class="fas fa-car-burst"></i></div>
-                        <div class="project-body">
-                            <span class="project-label">Sistem Pakar</span>
-                            <h3>Sistem Pakar Kerusakan Mobil</h3>
-                            <p>Mendiagnosa kerusakan umum pada mobil berdasarkan gejala yang dipilih pengguna. Berjalan sepenuhnya di browser.</p>
-                            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-                            <div class="project-links">
-                                <a href="https://sistem-pakar-laptop-gamma.vercel.app" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Demo</a>
-                                <a href="https://github.com/anggerr24/sistem_pakar_laptop" target="_blank" rel="noopener"><i class="fab fa-github"></i> Kode</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="detail">
-                        <div class="project-cover cover-web"><i class="fas fa-motorcycle"></i></div>
-                        <div class="project-body">
-                            <span class="project-label">Sistem Pakar</span>
+                    <article class="detail reveal">
+                        <div class="detail-media icon"><i class="fas fa-motorcycle"></i></div>
+                        <div class="detail-body">
+                            <span class="mono">Sistem Pakar</span>
                             <h3>Sistem Pakar Diagnosa Kerusakan Motor</h3>
                             <p>Mengidentifikasi masalah pada motor dari gejala yang dialami pengguna. Aturan diagnosa disimpan di database sehingga mudah ditambah.</p>
                             <div class="tags"><span>PHP</span><span>MySQL</span></div>
                         </div>
                     </article>
 
-                    <article class="detail">
-                        <div class="project-cover cover-data"><i class="fas fa-spray-can-sparkles"></i></div>
-                        <div class="project-body">
-                            <span class="project-label">Web App</span>
-                            <h3>Banding Parfum</h3>
-                            <p>Website statis untuk membandingkan 145 parfum lokal dan impor dari 46 merek.</p>
-                            <ul>
-                                <li>Filter berdasarkan merek, gender, family, harga, dan notes.</li>
-                                <li>Skor value dari kualitas dibanding harga per ml.</li>
-                                <li>Bandingkan hingga 4 parfum dan cari parfum mirip berdasarkan kesamaan notes.</li>
-                            </ul>
-                            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-                        </div>
-                    </article>
-
-                    <article class="detail">
-                        <div class="project-cover cover-web"><i class="fas fa-user-astronaut"></i></div>
-                        <div class="project-body">
-                            <span class="project-label">Website</span>
+                    <article class="detail reveal">
+                        <div class="detail-media icon"><i class="fas fa-pen-nib"></i></div>
+                        <div class="detail-body">
+                            <span class="mono">Website</span>
                             <h3>Portofolio Ini</h3>
-                            <p>Website portofolio statis yang responsif, dengan animasi ringan yang otomatis mati kalau sistem meminta reduced motion.</p>
+                            <p>Website portofolio statis yang responsif, dengan mode terang/gelap dan animasi ringan yang otomatis mati kalau sistem meminta reduced motion.</p>
                             <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vercel</span></div>
-                            <div class="project-links">
-                                <a href="https://github.com/anggerr24/porto_angger" target="_blank" rel="noopener"><i class="fab fa-github"></i> Kode</a>
+                            <div class="links">
+                                <a class="link" href="https://github.com/anggerr24/porto_angger" target="_blank" rel="noopener"><i class="fab fa-github"></i> Kode</a>
                             </div>
                         </div>
                     </article>
                 </div>
 
-                <div class="page-back">
-                    <a href="index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
-                </div>
+                <div class="page-back"><a href="index.html#projects" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Kembali ke beranda</a></div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Angger Rizky Rambudia</p>
-            <a href="index.html" class="back-top" aria-label="Beranda"><i class="fas fa-house"></i></a>
+    <footer class="site-footer">
+        <div class="wrap">
+            <span class="mono">© <span data-year>2026</span> Angger Rizky Rambudia</span>
+            <a class="mono" href="index.html">← Kembali ke beranda</a>
         </div>
     </footer>
 
-    <script src="header.js"></script>
+    <script src="main.js"></script>
     <script src="bengkel-carousel.js"></script>
 </body>
 </html>

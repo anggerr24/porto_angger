@@ -4,47 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Media — Angger Rizky Rambudia</title>
-    <meta name="description" content="Pengalaman social media Angger Rizky Rambudia sebagai Social Media Specialist di Rutee.">
-    <meta name="theme-color" content="#0b1120">
+    <meta name="description" content="Pengalaman social media Angger Rizky Rambudia di Rutee.">
+    <meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#12110e" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317150f'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23ff6b3d'%3EA%3C/text%3E%3C/svg%3E">
+    <script>
+        (function () {
+            document.documentElement.classList.add('js');
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="index.html" class="logo">Angger<span>.</span></a>
-            <button type="button" class="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
-                <i class="fas fa-bars"></i>
-            </button>
+    <a href="#main" class="skip-link">Langsung ke konten</a>
+
+    <header class="site-header">
+        <nav class="wrap nav" aria-label="Navigasi utama">
+            <a href="index.html" class="brand">Angger<em>.</em></a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="project_web_development.html">Web Dev</a></li>
-                <li><a href="project_data_analysis.html">Data Analysis</a></li>
-                <li><a href="project_social_media.html" class="active">Social Media</a></li>
-                <li><a href="index.html#contact" class="nav-cta">Kontak</a></li>
+                <li><a href="project_web_development.html">Web Development</a></li>
+                <li><a href="project_data_analysis.html">Data &amp; AI</a></li>
+                <li><a href="project_social_media.html" class="active" aria-current="page">Social Media</a></li>
+                <li><a href="index.html#contact">Kontak</a></li>
             </ul>
+            <div class="nav-tools">
+                <button type="button" class="icon-btn theme-toggle" aria-label="Ganti tema terang/gelap">
+                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                </button>
+                <button type="button" class="icon-btn nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </nav>
     </header>
 
-    <main>
+    <main id="main">
         <section class="page-hero">
-            <div class="container">
-                <h1>Social Media</h1>
+            <div class="wrap">
+                <a class="back mono" href="index.html#experience"><i class="fas fa-arrow-left"></i> Pengalaman</a>
+                <h1>Social <em>Media</em></h1>
                 <p>Pengalaman mengelola konten media sosial, merencanakan kalender konten, dan mengevaluasi performa berdasarkan data insight.</p>
             </div>
         </section>
 
         <section class="page-section">
-            <div class="container">
-                <h2>Pengalaman</h2>
+            <div class="wrap">
+                <h2 class="reveal">Pengalaman</h2>
                 <div class="detail-list">
-                    <article class="detail">
-                        <div class="project-cover"><img src="sosmed.jpg" alt="Ilustrasi media sosial" loading="lazy"></div>
-                        <div class="project-body">
-                            <span class="project-label">Magang · Remote · Agt – Okt 2025</span>
+                    <article class="detail reveal">
+                        <div class="detail-media"><img src="sosmed.jpg" alt="Ilustrasi media sosial" loading="lazy"></div>
+                        <div class="detail-body">
+                            <span class="mono">Magang · Remote · Agt — Okt 2025</span>
                             <h3>Social Media Specialist / Marketing Intern — Rutee</h3>
                             <ul>
                                 <li>Mengelola dan mengembangkan konten media sosial untuk meningkatkan engagement dan brand awareness.</li>
@@ -57,8 +75,8 @@
                     </article>
                 </div>
 
-                <h2>Tools</h2>
-                <ul class="chips">
+                <h2 class="subhead reveal">Tools</h2>
+                <ul class="chips reveal">
                     <li><i class="fas fa-palette"></i> Canva</li>
                     <li><i class="fas fa-video"></i> CapCut</li>
                     <li><i class="fab fa-instagram"></i> Instagram</li>
@@ -66,20 +84,18 @@
                     <li><i class="fas fa-file-excel"></i> Microsoft Excel</li>
                 </ul>
 
-                <div class="page-back">
-                    <a href="index.html#experience" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
-                </div>
+                <div class="page-back"><a href="index.html#experience" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Kembali ke beranda</a></div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Angger Rizky Rambudia</p>
-            <a href="index.html" class="back-top" aria-label="Beranda"><i class="fas fa-house"></i></a>
+    <footer class="site-footer">
+        <div class="wrap">
+            <span class="mono">© <span data-year>2026</span> Angger Rizky Rambudia</span>
+            <a class="mono" href="index.html">← Kembali ke beranda</a>
         </div>
     </footer>
 
-    <script src="header.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
