@@ -1675,3 +1675,122 @@ a.status:hover { border-color: var(--plum); color: var(--plum); }
     .ed-word, .ed-card, .ed-photo { animation: none !important; }
 }
 .detail-media.icon { background: linear-gradient(160deg, #f6eefb, #efe2f6); }
+
+
+/* ============================================================
+   AKSEN TECH / CODE / DATA di atas tema editorial
+   ============================================================ */
+body.ed { background-image: radial-gradient(rgba(74, 16, 96, 0.09) 1px, transparent 1.4px); background-size: 22px 22px; }
+.ed-slash { font-family: var(--font-mono); font-size: .8em; color: var(--orange); }
+.ed-caret { display: inline-block; width: .09em; height: .78em; margin-left: .06em; vertical-align: -0.04em; background: var(--orange); animation: blink 1s steps(1) infinite; }
+.ed-caret.sm { width: .55em; height: 1.05em; vertical-align: -0.18em; margin-left: .4em; }
+.ed-tag { font-family: var(--font-mono); font-weight: 600; font-stretch: 100%; color: var(--plum); opacity: .55; }
+
+/* garis blueprint halus di hero */
+.ed-hero::before {
+    content: ''; position: absolute; inset: 0; z-index: -2; pointer-events: none;
+    background-image: linear-gradient(rgba(74, 16, 96, 0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(74, 16, 96, 0.055) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 20%, transparent 75%);
+    mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 20%, transparent 75%);
+}
+
+/* bar jendela (titik tiga + nama file) */
+.ed-win { display: flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: .72rem; color: rgba(255, 255, 255, 0.62); }
+.ed-win i { width: 10px; height: 10px; border-radius: 50%; background: #ff6b5e; }
+.ed-win i:nth-child(2) { background: #ffbe3b; }
+.ed-win i:nth-child(3) { background: #35c96a; }
+.ed-win span { margin-left: 8px; }
+
+/* widget melayang di hero */
+.ed-widget { position: absolute; border-radius: 12px; box-shadow: 0 24px 50px -20px rgba(40, 6, 56, 0.6); animation: widgetIn .9s .6s var(--ease) both; }
+@keyframes widgetIn { from { opacity: 0; translate: 0 30px; } to { opacity: 1; translate: 0 0; } }
+.ed-codewin { left: clamp(16px, 5vw, 90px); top: 53%; width: 290px; padding: 12px 14px 14px; background: #2a0838; transform: rotate(-4deg); border: 1px solid rgba(255, 255, 255, 0.08); }
+.ed-codewin pre { margin-top: 10px; font-family: var(--font-mono); font-size: .74rem; line-height: 1.7; color: #e9dcf0; white-space: pre; }
+.ed-codewin .ln { display: inline-block; width: 1.6em; color: rgba(255, 255, 255, 0.28); user-select: none; }
+.ed-codewin b { color: #ff9a4d; font-weight: 600; }
+.ed-codewin em { color: #9fe39a; font-style: normal; }
+.ed-codewin u { color: #7fd1ff; text-decoration: none; }
+.ed-chart { right: clamp(16px, 6vw, 110px); top: 42%; width: 190px; padding: 12px 14px 10px; background: #fff; border: 1.5px solid var(--line); transform: rotate(5deg); }
+.ed-chart-label { display: block; margin-bottom: 6px; font-family: var(--font-mono); font-size: .68rem; color: var(--muted); }
+.ed-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.ed-chart .bar { fill: #e9d5f5; transform-box: fill-box; transform-origin: bottom; animation: barUp 1s 1s var(--ease) both; }
+.ed-chart .bar.b2 { fill: var(--accent-2); animation-delay: 1.15s; }
+.ed-chart .line { stroke: var(--orange); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 200; stroke-dashoffset: 200; animation: draw 1.4s 1.5s var(--ease) forwards; }
+@keyframes barUp { from { transform: scaleY(0); } to { transform: none; } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+/* kotak Experience bergaya editor kode */
+.ed-exp { position: relative; overflow: hidden; padding-top: clamp(20px, 2.6vw, 30px); }
+.ed-exp::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 40px 40px;
+    -webkit-mask-image: linear-gradient(160deg, #000, transparent 70%); mask-image: linear-gradient(160deg, #000, transparent 70%);
+}
+.ed-exp > * { position: relative; }
+.ed-exp .ed-win { margin-bottom: clamp(18px, 2.4vw, 30px); padding-bottom: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+.ed-exp-grid { counter-reset: exp; }
+.ed-exp-grid article { counter-increment: exp; }
+.ed-exp-grid article::before { content: '0' counter(exp); display: block; margin-bottom: 6px; font-family: var(--font-mono); font-size: .74rem; color: rgba(255, 255, 255, 0.45); }
+
+/* judul kecil gaya komentar kode */
+.ed-h::before, .ed-feature-body h4::before { content: '// '; font-family: var(--font-mono); font-weight: 500; font-size: .62em; color: var(--orange); opacity: .8; vertical-align: .12em; }
+.ed-feature-body h4::before { font-size: .78em; color: var(--muted); vertical-align: 0; }
+
+/* baris perintah di atas judul bagian */
+.ed-pill-wrap { flex-direction: column; align-items: center; gap: 14px; }
+.ed-cmd { display: inline-block; padding: 5px 12px; border-radius: 8px; background: rgba(74, 16, 96, 0.07); color: var(--plum); font-size: .8rem; }
+.ed-cmd.light { display: block; width: max-content; max-width: calc(100% - 32px); margin: 0 auto 6px; background: rgba(255, 255, 255, 0.1); color: #f1dff8; }
+.ed-contact-sec .ed-cmd { margin-bottom: 14px; }
+
+/* kartu angka sebagai data */
+.fact { position: relative; display: flex; flex-direction: column; }
+.fact-key { color: var(--orange); font-size: .72rem; margin-bottom: 4px; }
+.fact-meter, .fact-dots, .fact-spark { margin-top: 14px; }
+.fact-meter { display: block; height: 6px; border-radius: 6px; background: #efe2f6; overflow: hidden; }
+.fact-meter i { display: block; height: 100%; width: var(--v); border-radius: inherit; background: linear-gradient(90deg, var(--plum), var(--accent-2)); transform-origin: left; transform: scaleX(0); transition: transform 1.4s .2s var(--ease); }
+.facts.in .fact-meter i { transform: none; }
+.fact-dots { display: flex; flex-wrap: wrap; gap: 5px; }
+.fact-dots i { width: 12px; height: 12px; border-radius: 50%; background: var(--plum); }
+.fact-dots i:nth-child(even) { background: var(--orange); }
+.fact-dots.sq i { border-radius: 3px; }
+.fact-spark { display: block; width: 100%; height: 26px; overflow: visible; }
+.fact-spark polyline { stroke: var(--orange); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 160; stroke-dashoffset: 160; transition: stroke-dashoffset 1.6s .3s var(--ease); }
+.facts.in .fact-spark polyline { stroke-dashoffset: 0; }
+
+/* chip data di proyek pilihan */
+.ed-stats { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.ed-stats li { padding: 5px 11px; border-radius: 8px; background: #fff; border: 1.5px dashed var(--line-strong); color: var(--text-2); font-size: .76rem; }
+.ed-stats b { color: var(--plum); font-weight: 600; }
+
+/* simbol kode di pita */
+.ribbon-track span.sym { font-family: var(--font-mono); font-weight: 600; opacity: .95; }
+
+/* grid halus di bagian ungu */
+.ed-dark::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+}
+.ed-dark > * { position: relative; }
+
+@media (max-width: 1040px) {
+    .ed-codewin { top: 58%; width: 250px; }
+    .ed-codewin pre { font-size: .66rem; }
+    .ed-chart { width: 150px; top: 46%; }
+}
+@media (max-width: 640px) {
+    .ed-codewin { display: none; }
+    .ed-chart { width: 96px; padding: 7px 8px 6px; right: 3vw; top: 60%; border-radius: 9px; }
+    .ed-chart-label { font-size: .5rem; margin-bottom: 3px; }
+    .ed-cmd { font-size: .72rem; }
+    .ed-cmd.light { white-space: normal; text-align: center; width: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ed-widget, .ed-chart .bar { animation: none !important; }
+    .ed-chart .line, .fact-spark polyline { stroke-dashoffset: 0 !important; }
+    .fact-meter i { transform: none !important; }
+}
+@media (min-width: 641px) { .ed-tag.t1 { left: 27%; bottom: 17%; } }
+.fact-spark { height: 30px; }

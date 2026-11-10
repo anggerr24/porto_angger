@@ -474,15 +474,19 @@
 
     /* ---------- Pita berjalan (ribbon) ---------- */
     document.querySelectorAll('.ribbons').forEach(function (box) {
-        var word = box.getAttribute('data-text') || '';
+        var words = (box.getAttribute('data-text') || '').split('|');
         for (var r = 0; r < 2; r++) {
             var rib = document.createElement('div');
             rib.className = 'ribbon r' + (r + 1);
             var track = document.createElement('div');
             track.className = 'ribbon-track';
-            for (var k = 0; k < 40; k++) {
+            /* jumlah genap kelipatan daftar kata: dua paruh identik supaya loop mulus */
+            var reps = Math.ceil(20 / words.length) * 2 * words.length;
+            for (var k = 0; k < reps; k++) {
                 var sp = document.createElement('span');
-                sp.textContent = word;
+                var w = words[k % words.length];
+                sp.textContent = w;
+                if (w.replace(/[^A-Za-z]/g, '').length < 3) sp.className = 'sym';
                 track.appendChild(sp);
             }
             rib.appendChild(track);

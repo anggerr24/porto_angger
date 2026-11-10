@@ -34,7 +34,7 @@
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
             </div>
-            <span class="ed-role">Programmer &amp; System Analyst</span>
+            <span class="ed-role"><span class="ed-slash" aria-hidden="true">// </span>Programmer &amp; System Analyst</span>
             <div class="nav-tools">
                 <button type="button" class="icon-btn nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
                     <i class="fas fa-bars"></i>
@@ -49,11 +49,26 @@
             <div class="ed-stage" aria-hidden="true">
                 <span class="ed-word w1">Port</span>
                 <span class="ed-word w2">folio</span>
-                <span class="ed-tag t1">ANGGER</span>
-                <span class="ed-tag t2">ANGGER</span>
+                <span class="ed-tag t1">&lt;code/&gt;</span>
+                <span class="ed-tag t2">{ data }</span>
                 <img class="ed-card c1" src="prev_parfum.jpg" alt="" width="800" height="2000">
                 <img class="ed-card c2" src="pbi/collage.jpg" alt="" width="800" height="500">
                 <img class="ed-card c3" src="prev_bedjo.jpg" alt="" width="800" height="829">
+                <div class="ed-widget ed-codewin">
+                    <div class="ed-win"><i></i><i></i><i></i><span>angger.js</span></div>
+                    <pre><span class="ln">1</span><b>const</b> angger = {
+<span class="ln">2</span>  role: <em>'programmer'</em>,
+<span class="ln">3</span>  stack: [<em>'php'</em>, <em>'js'</em>, <em>'python'</em>],
+<span class="ln">4</span>  openToWork: <u>true</u>
+<span class="ln">5</span>};</pre>
+                </div>
+                <div class="ed-widget ed-chart">
+                    <span class="ed-chart-label">data → insight</span>
+                    <svg viewBox="0 0 150 70" fill="none">
+                        <rect class="bar" x="4" y="38" width="16" height="28" rx="3"/><rect class="bar b2" x="28" y="26" width="16" height="40" rx="3"/><rect class="bar" x="52" y="44" width="16" height="22" rx="3"/><rect class="bar b2" x="76" y="16" width="16" height="50" rx="3"/><rect class="bar" x="100" y="30" width="16" height="36" rx="3"/><rect class="bar b2" x="124" y="8" width="16" height="58" rx="3"/>
+                        <polyline class="line" points="12,34 36,22 60,40 84,12 108,26 132,4"/>
+                    </svg>
+                </div>
             </div>
             <div class="ed-photo"><img src="foto-hero.jpg" alt="Foto Angger Rizky Rambudia" width="660" height="880"></div>
 
@@ -75,6 +90,7 @@
         <section id="about" class="ed-about">
             <div class="wrap ed-about-grid">
                 <div class="ed-exp reveal" id="experience">
+                    <div class="ed-win"><i></i><i></i><i></i><span>experience.json</span></div>
                     <h2>Experience</h2>
                     <div class="ed-exp-grid">
                         <article>
@@ -101,7 +117,7 @@
                 </div>
 
                 <div class="ed-me reveal">
-                    <h2 class="ed-hallo" aria-label="Hallo">Ha<i>ll</i>o</h2>
+                    <h2 class="ed-hallo" aria-label="Hallo">Ha<i>ll</i>o<span class="ed-caret" aria-hidden="true"></span></h2>
                     <p class="ed-bio">Saya Angger, Sarjana Komputer dari <strong>Sistem Informasi Universitas Gunadarma</strong>. Saya membangun aplikasi web, mengolah data jadi insight, dan menerjemahkan kebutuhan bisnis menjadi sistem yang jalan. Di luar kerjaan, saya suka bikin alat kecil yang menjawab pertanyaan sehari-hari, seperti Banding Parfum.</p>
 
                     <h3 class="ed-h">Contact</h3>
@@ -130,20 +146,20 @@
 
             <div class="wrap">
                 <div class="facts reveal">
-                    <div class="fact"><span class="fact-num" data-count="3.76" data-decimals="2">3,76</span><span class="fact-label">IPK dari 4,00</span></div>
-                    <div class="fact"><span class="fact-num" data-count="3">3</span><span class="fact-label">Pengalaman kerja &amp; magang</span></div>
-                    <div class="fact"><span class="fact-num" data-count="9">9</span><span class="fact-label">Proyek</span></div>
-                    <div class="fact"><span class="fact-num" data-count="14">14</span><span class="fact-label">Sertifikasi</span></div>
+                    <div class="fact"><span class="fact-key mono">ipk</span><span class="fact-num" data-count="3.76" data-decimals="2">3,76</span><span class="fact-label">IPK dari 4,00</span><span class="fact-meter" style="--v:94%" aria-hidden="true"><i></i></span></div>
+                    <div class="fact"><span class="fact-key mono">experience</span><span class="fact-num" data-count="3">3</span><span class="fact-label">Pengalaman kerja &amp; magang</span><span class="fact-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+                    <div class="fact"><span class="fact-key mono">projects.length</span><span class="fact-num" data-count="9">9</span><span class="fact-label">Proyek</span><span class="fact-dots sq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+                    <div class="fact"><span class="fact-key mono">certs.count()</span><span class="fact-num" data-count="14">14</span><span class="fact-label">Sertifikasi</span><svg class="fact-spark" viewBox="0 0 120 30" fill="none" aria-hidden="true"><polyline points="2,26 20,22 38,24 56,14 74,17 92,7 118,3"/></svg></div>
                 </div>
             </div>
         </section>
 
-        <div class="ribbons" data-text="ANGGER" aria-hidden="true"></div>
+        <div class="ribbons" data-text="ANGGER|&lt;/&gt;|PROGRAMMER|{ }|SYSTEM ANALYST|01|DATA" aria-hidden="true"></div>
 
         <!-- Proyek pilihan -->
         <section id="projects" class="ed-panel">
             <div class="wrap">
-                <div class="ed-pill-wrap reveal"><h2 class="ed-pill">Proyek Pilihan</h2></div>
+                <div class="ed-pill-wrap reveal"><span class="ed-cmd mono" aria-hidden="true">$ git log --featured</span><h2 class="ed-pill">Proyek Pilihan</h2></div>
 
                 <!-- Banding Parfum -->
                 <article class="ed-feature reveal">
@@ -154,6 +170,7 @@
                     <div class="ed-feature-body">
                         <div class="ed-feature-head"><h3>Banding Parfum</h3><span class="ed-kind">Web App</span></div>
                         <p class="ed-sub">Web App | Data Scraping | Proyek Pribadi</p>
+                        <ul class="ed-stats mono"><li><b>218</b> parfum</li><li><b>47</b> merek</li><li><b>4</b> parfum dibandingkan sekaligus</li></ul>
                         <h4>Proyek</h4>
                         <p>Website untuk membandingkan <strong>218 parfum lokal dan impor dari 47 merek</strong> berdasarkan harga per ml, kualitas, dan notes. Datanya saya kumpulkan sendiri lewat script Python. Tidak perlu server: semua data dan logika berjalan di browser.</p>
                         <h4>Fitur</h4>
@@ -181,6 +198,7 @@
                     <div class="ed-feature-body">
                         <div class="ed-feature-head"><h3>Bedjo Garage</h3><span class="ed-kind">Web App</span></div>
                         <p class="ed-sub">Sistem Booking | Pembayaran QRIS | Panel Admin</p>
+                        <ul class="ed-stats mono"><li><b>PHP 8</b> tanpa framework</li><li><b>SQLite</b> tanpa server DB</li><li><b>QRIS</b> untuk DP</li></ul>
                         <h4>Proyek</h4>
                         <p>Website untuk bengkel motor, dibuat tanpa framework dan tanpa server database terpisah. Pelanggan bisa booking servis, membayar DP, dan belanja oli serta sparepart dari satu tempat.</p>
                         <h4>Fitur</h4>
@@ -208,6 +226,7 @@
                     <div class="ed-feature-body">
                         <div class="ed-feature-head"><h3>Data Visualization</h3><span class="ed-kind">Power BI</span></div>
                         <p class="ed-sub">Dashboard | Data Visualization | Praktikum &amp; Tugas Kuliah 2025</p>
+                        <ul class="ed-stats mono"><li><b>4</b> dashboard</li><li><b>5</b> halaman</li><li><b>KPI</b> · slicer · peta</li></ul>
                         <h4>Proyek</h4>
                         <p>Empat dashboard Power BI dari praktikum dan tugas kuliah (April–Juni 2025): penjualan produk, supermarket sales, penjualan fast food, dan penjualan per produk.</p>
                         <h4>Fitur</h4>
@@ -228,9 +247,10 @@
 
         <!-- Proyek lainnya -->
         <section id="more" class="ed-dark">
-            <div class="ribbons" data-text="PROYEK" aria-hidden="true"></div>
+            <div class="ribbons" data-text="PROYEK|&lt;/&gt;|CODE|{ }|DATA|=&gt;" aria-hidden="true"></div>
+            <p class="ed-cmd light mono reveal" aria-hidden="true">SELECT * FROM proyek WHERE featured = false;</p>
             <h2 class="ed-banner-title reveal">Proyek Lainnya</h2>
-            <div class="ribbons flip" data-text="PROYEK" aria-hidden="true"></div>
+            <div class="ribbons flip" data-text="PROYEK|&lt;/&gt;|CODE|{ }|DATA|=&gt;" aria-hidden="true"></div>
             <div class="wrap">
                 <div class="projects">
                     <!-- Sistem Pakar Mobil -->
@@ -382,9 +402,9 @@
 
         <!-- Sertifikasi -->
         <section id="certifications" class="ed-certs">
-            <div class="ribbons" data-text="SERTIFIKAT" aria-hidden="true"></div>
+            <div class="ribbons" data-text="SERTIFIKAT|✓|BELAJAR|++|SKILL" aria-hidden="true"></div>
             <div class="wrap">
-                <div class="ed-pill-wrap reveal"><h2 class="ed-pill">14 Sertifikat</h2></div>
+                <div class="ed-pill-wrap reveal"><span class="ed-cmd mono" aria-hidden="true">$ ls sertifikat/ | wc -l</span><h2 class="ed-pill">14 Sertifikat</h2></div>
                 <p class="ed-lead reveal">Pelatihan dari Universitas Gunadarma, Pacmann, dan Digital Talent Scholarship. Klik sertifikat untuk melihat ukuran penuh.</p>
 
                 <h3 class="cert-group reveal"><i class="fas fa-building-columns"></i> Universitas Gunadarma <span class="mono">9</span></h3>
@@ -514,6 +534,7 @@
         <!-- Kontak -->
         <section id="contact" class="ed-contact-sec">
             <div class="wrap">
+                <p class="ed-cmd mono reveal" aria-hidden="true">&gt; ping angger --open-to-work<span class="ed-caret sm"></span></p>
                 <h2 class="ed-together reveal">Let's work together</h2>
                 <div class="ed-pills reveal">
                     <a href="mailto:angger2434@gmail.com">angger2434@gmail.com</a>
