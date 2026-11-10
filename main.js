@@ -436,7 +436,7 @@
         }
         lbCards.forEach(function (c) {
             c.addEventListener('click', function () {
-                var gallery = c.closest('.cert-gallery') || c.closest('.project') || c.parentElement;
+                var gallery = c.closest('.cert-gallery') || c.closest('.project, .ed-feature') || c.parentElement;
                 slides = slidesFor(gallery);
                 lastFocus = c;
                 for (var k = 0; k < slides.length; k++) { if (slides[k].card === c) break; }
@@ -449,7 +449,7 @@
         });
         document.querySelectorAll('.open-gallery').forEach(function (btn) {
             btn.addEventListener('click', function () {
-                var t = btn.closest('.project') && btn.closest('.project').querySelector('[data-full]');
+                var host = btn.closest('.project, .ed-feature'); var t = host && host.querySelector('[data-full]');
                 if (t) t.click();
             });
         });
@@ -472,6 +472,24 @@
         });
     }
 
+    /* ---------- Pita berjalan (ribbon) ---------- */
+    document.querySelectorAll('.ribbons').forEach(function (box) {
+        var word = box.getAttribute('data-text') || '';
+        for (var r = 0; r < 2; r++) {
+            var rib = document.createElement('div');
+            rib.className = 'ribbon r' + (r + 1);
+            var track = document.createElement('div');
+            track.className = 'ribbon-track';
+            for (var k = 0; k < 40; k++) {
+                var sp = document.createElement('span');
+                sp.textContent = word;
+                track.appendChild(sp);
+            }
+            rib.appendChild(track);
+            box.appendChild(rib);
+        }
+    });
+
     /* ---------- Tahun footer ---------- */
     document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
@@ -480,7 +498,7 @@
         var pauseIO = new IntersectionObserver(function (entries) {
             entries.forEach(function (en) { en.target.classList.toggle('paused', !en.isIntersecting); });
         }, { rootMargin: '100px 0px' });
-        document.querySelectorAll('.hero, .marquee, .viz, .contact-card, .browser-bar').forEach(function (el) { pauseIO.observe(el); });
+        document.querySelectorAll('.hero, .marquee, .viz, .contact-card, .browser-bar, .ribbons').forEach(function (el) { pauseIO.observe(el); });
     }
 
     /* ---------- Jaringan partikel di hero ---------- */
